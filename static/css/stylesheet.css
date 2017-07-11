@@ -1,0 +1,347 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/*background: url('images/background.jpg');*/
+	color: black;
+	background-color: #cfd7df !important;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+nav {
+	margin-bottom: 0 !important;
+	background-color: #4d75c9 !important;
+	border-radius: 0 !important;
+	border: none !important;
+	border-bottom: 1px solid #2f343a !important;
+	
+}
+
+ul.navbar-nav li a {
+	color: black !important;
+}
+
+ul.navbar-nav li a:hover {
+	background-color: white !important;
+}
+
+div.current p {
+	text-align: center;
+}
+
+div.jumbotron {
+	border-radius: 0 !important;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #abb0b8;
+	/*background-color: rgba(172, 175, 178, .7);*/
+	background: url('images/jumbotron.jpg');
+}
+
+
+
+
+div.services h2,
+div.mission h2,
+div.third h2 {
+	font-weight: 600;
+	letter-spacing: .025em;
+	font-size: 2em;
+}
+
+div.jumbotron h2 {
+	font-size: 1.9em;
+	font-weight: 600;
+	letter-spacing: .025em;
+	margin: .15em;
+}
+
+div.third h2,
+div.services h2 {
+	padding: .25em 0 .1em 0;
+}
+
+
+img.nav-img {
+	height: 2.8em;
+	width: 10em;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: .9;
+}
+
+div.jumbotron img.logo {
+	width: 400px;
+	height: 175px;
+	margin: 0;
+	opacity: 0.9;
+	filter: alpha(opacity=90); 
+	border-top: 1px solid #abb0b8;
+	border-right: 1px solid #abb0b8;
+	border-left: 1px solid #abb0b8;
+	border-bottom: 1px solid #abb0b8;
+	margin: .5em 0 0 0;
+}
+
+div.jumbotron img.banner {
+	height: 100px;
+	width: 400px;
+	position: relative;
+	right: .025em;
+	margin: 0 0 .5em 0;
+	border: 1px solid #abb0b8;
+}
+
+
+div.services ul {
+	padding: .25em 1em .25em 2.5em;
+	
+	border-radius: .1em;
+}
+
+div.mission h2 {
+	margin: .25em 0;
+}
+
+div.mission p {
+	border-radius: .1em;
+	padding: .25em;
+	
+}
+
+div.current img {
+	height: 200px;
+	width: 200px;
+	border: 1px solid black;
+	
+}
+
+h2 {
+	text-align: center;
+}
+
+.container {
+	/*background-color: rgba(191, 191, 224, 0.6);*/
+	padding: 0 .5em;
+}
+
+div.contact-form {
+	border: 1px solid grey;
+	margin: 1em -.6em 1em 1em;
+	padding: .5em;
+	border-radius: .5em;
+}
+
+div.contact-info {
+	border: 1px solid grey;
+	margin: 1em 1em 1em -.6em;
+	padding: .5em;
+	border-radius: .5em;
+}
+
+img.testimonials {
+	float: left;
+	border: 1px solid black;
+}
+
+div.t-section {
+	margin-bottom: 1em;
+	overflow: auto;
+	border: 1px solid black;
+	padding: 1em;
+	border-radius: .25em;
+	background-color: white;
+}
+
+div.t-section p {
+	font-size: 1.15em;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+div.testimonials h3 {
+	margin: 0;
+}
+
+div.testimonials img {
+	margin-right: .5em;
+}
+
+div.testimonials {
+	padding: 1em;
+}
+
+div.certificates img {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 1em;
+}
+
+div.slide {
+	margin-bottom: 2em;
+}
+
+div.carousel {
+	margin: 0;
+}
+
+div.item img {
+	margin: 0 auto;
+	display: block;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+}
+
+img.facebook {
+	height: 3em;
+	width: 7em;
+	
+}
+
+textarea {
+	height: 5em;
+}
+
+.groupings {
+	text-align: center;
+}
+
+div.mission {
+
+	padding: .25em;
+	border-radius: .25em;
+	margin-top: .5em;
+	
+}
+
+div.mission p,
+div.services ul li
+{
+	font-size: 1.25em;
+}
+
+div.contact {
+	margin-right: -1em;
+	padding-bottom: .25em;
+}
+
+a.email-button {
+	margin: 0 auto .75em auto;
+	display: block;
+	width: 7em;
+	font-weight: bold;
+}
+
+
+
+
+div.contact p {
+	font-size: 1.05em;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.third img {
+	display: block;
+	margin: 0 auto;
+}
+
+div.services {
+	padding: 0 1em;
+	margin: .5em 0 -1em 0;
+	
+	border-radius: .25em;
+}
+
+div.services h2,
+div.third h2  {
+	margin: .25em;
+}
+
+div.mission,
+div.services,
+div.current,
+div.contact {
+	
+	background-color: #e7eef4 !important;
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+}
+
+div.current,
+div.contact {
+	
+	border-radius: .25em;
+}
+
+div.contact {
+	margin-left: -1.5em;
+}
+
+div.current {
+	margin-left: -1em;
+}
+
+div.third {
+	padding: 1em;
+	margin-bottom: -.5em
+}
+
+div.testimonials h1 {
+	text-align: center;
+	margin: .25em 0;
+}
+
+
+
+footer {
+	clear: both;
+	text-align: center;
+	padding: 1em 0;
+	border-top: 1px solid #2f343a;
+	background-color: grey;
+	overflow: auto;
+	background-color: #4d75c9 !important;
+}
+
+footer p {
+	margin: 0;
+}
+
+@media screen and (max-width: 990px) {
+	div.mission h2 {
+		font-size: 1.75em;
+	}
+	
+	div.mission p {
+		font-size: 1.1em;
+	}
+	
+	div.services ul li {
+		font-size: 1.1em;
+	}
+	
+	div.current {
+		margin-right: -1em;
+	}
+	
+	div.contact {
+		margin-left: -1em;
+	}
+	
+	div.contact p {
+		font-size: 1.5em;
+	}
+}
