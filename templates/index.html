@@ -1,4 +1,4 @@
-{% extends "bootstrap/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}
 	brineyconstruction.com
@@ -6,13 +6,25 @@
 
 {% block jumbotron %}
 	<div class='jumbotron'>
-		<img class='logo' src='images/truck.jpg'><br>
-		<img class='banner' src='images/logo.jpg'>
+		<img class='logo' src="{{ url_for('static', filename='images/truck.jpg') }}"><br>
+		<img class='banner' src="{{ url_for('static', filename='images/logo.png') }}">
 	</div>
+	
+	
 {% endblock %}
 
-{% block content %}
+{% block index_content %}
+	<script>
+		$(document).ready(function(){
+			$("div.mission p, div.mission h2").fadeIn("swing");
+		
+			$("ul").child().mouseenter(function(){
+				$("li").css("font-size", "1.25em");
+			});
+		});
+	</script>
 	<div class="mission">
+	  <div class="container">
 		<h2>Need Residential Construction? <br>We're on Your Side</h2>
 		<div class="row">
 			<div class="col-sm-4">
@@ -25,8 +37,10 @@
 				<p>We offer a <strong>1 year warranty</strong> for all services provided. Most importantly, we work hard to finish each project on time and under budget. We work around your schedule, <strong>customer satisfaction is our #1 priority.</strong> </p>
 			</div>
 		</div>
+	  </div>
 	</div>
 	<div class="services">
+	  <div class="container">
 		<h2>Signature Services</h2>
 		<div class="row">
 			<div class="col-sm-4">
@@ -61,30 +75,13 @@
 				</ul>
 			</div>
 		  </div>
+	   </div>
 	</div>
 	
 	<div class="third">
+	  <div class="container">
 		<div class="row">
-			<div class="col-md-9">
-				<div class="current">
-					<h2>Current Projects</h2>
-					<div class="row">
-						<div class="col-sm-4">
-							<img src="images/demo1.jpg">
-							<p>Bathroom Remodel</p>
-						</div>
-						<div class="col-sm-4">
-							<img src="images/demo2.jpg">
-							<p>Siding & Deck</p>
-						</div>
-						<div class="col-sm-4">
-							<img src="images/demo3.jpg">
-							<p>Deck</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<div class="contact">
 					<h2>Contact</h2>
 					<p>1324 Benton Harbor, MI 49022</p>
@@ -92,10 +89,30 @@
 					<p>Fax: 269-588-4607</p>
 					<p>Office Hours:</p>
 					<p>Monday - Friday 8AM to 7PM</p>
-					<a href="/contact.php" style="color: black;" class="btn btn-xs btn-primary email-button">Email Us</a>
+					<a href="/contact.php" style="color: black;" class="btn btn-xs btn-primary email-button">Email Us</a><br>
 					<a target="_blank" title="find us on Facebook" href="https://www.facebook.com/Briney-Construction-Services-Inc-101990093213634/"><img alt="find us on facebook" class="facebook" src="//login.create.net/images/icons/user/facebook-b_130x50.png" border=0></a>
 				</div>
 			</div>
+		  <div class="col-md-8">
+				<div class="current">
+					<h2>Current Projects</h2>
+					<div class="row">
+						<div class="col-md-4 col-xs-6">
+							<img src="{{ url_for('static', filename='images/demo1.jpg') }}">
+							<p>Bathroom Remodel</p>
+						</div>
+						<div class="col-md-4 col-xs-6">
+							<img src="{{ url_for('static', filename='images/demo2.jpg') }}">
+							<p>Siding & Deck</p>
+						</div>
+						<div class="col-md-4 col-xs-6">
+							<img src="{{ url_for('static', filename='images/demo3.jpg') }}">
+							<p>Deck</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+	  </div>
 	</div>
 {% endblock %}

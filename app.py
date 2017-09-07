@@ -4,13 +4,23 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 Bootstrap(app)
 
+index = False
+
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('index.html', index=True)
 	
-@app.route('/about')
-def about():
-	return render_template('about.html')
+@app.route('/resume')
+def resume():
+	return render_template('resume.html')
+	
+@app.route('/testimonials')
+def testimonials():
+	return render_template('testimonials.html')
+
+@app.route('/projects')
+def projects():
+	return render_template('projects.html')
 	
 @app.route('/contact')
 def contact():

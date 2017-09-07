@@ -5,8 +5,9 @@
 body {
 	/*background: url('images/background.jpg');*/
 	color: black;
-	background-color: #cfd7df !important;
-	font-family: "Arial Black", Gadget, sans-serif;
+	background-color: #e2ddd3;
+	font-family: "Bitter";
+
 }
 
 nav {
@@ -14,9 +15,11 @@ nav {
 	background-color: #4d75c9 !important;
 	border-radius: 0 !important;
 	border: none !important;
-	border-bottom: 1px solid #2f343a !important;
+	border-bottom: 1.75px solid black !important;	
 	
 }
+
+
 
 ul.navbar-nav li a {
 	color: black !important;
@@ -37,19 +40,11 @@ div.jumbotron {
 	margin: 0;
 	border-bottom: 1px solid #abb0b8;
 	/*background-color: rgba(172, 175, 178, .7);*/
-	background: url('images/jumbotron.jpg');
+	background: url('../images/jumbotron.jpg');
 }
 
 
 
-
-div.services h2,
-div.mission h2,
-div.third h2 {
-	font-weight: 600;
-	letter-spacing: .025em;
-	font-size: 2em;
-}
 
 div.jumbotron h2 {
 	font-size: 1.9em;
@@ -58,10 +53,7 @@ div.jumbotron h2 {
 	margin: .15em;
 }
 
-div.third h2,
-div.services h2 {
-	padding: .25em 0 .1em 0;
-}
+
 
 
 img.nav-img {
@@ -70,7 +62,7 @@ img.nav-img {
 	position: absolute;
 	left: 0;
 	top: 0;
-	opacity: .9;
+	
 }
 
 div.jumbotron img.logo {
@@ -104,11 +96,13 @@ div.services ul {
 
 div.mission h2 {
 	margin: .25em 0;
+	display: none;
 }
 
 div.mission p {
 	border-radius: .1em;
 	padding: .25em;
+	display: none;
 	
 }
 
@@ -117,6 +111,10 @@ div.current img {
 	width: 200px;
 	border: 1px solid black;
 	
+}
+
+div.services {
+	background-color: #4d75c9 !important;
 }
 
 h2 {
@@ -129,7 +127,6 @@ h2 {
 }
 
 div.contact-form {
-	border: 1px solid grey;
 	margin: 1em -.6em 1em 1em;
 	padding: .5em;
 	border-radius: .5em;
@@ -140,6 +137,29 @@ div.contact-info {
 	margin: 1em 1em 1em -.6em;
 	padding: .5em;
 	border-radius: .5em;
+	text-align: center;
+}
+
+div.contact-form input, 
+div.contact-form textarea {
+	border: 1px solid #9e9897 !important;
+}
+
+div.owner {
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+div.resume-list {
+	float: left;
+	width: 75%;
+}
+
+div.contact-form h2,
+div.contact-info h2 {
+	margin: 0;
+	padding: .15em .15em .25em .15em;
 }
 
 img.testimonials {
@@ -150,10 +170,11 @@ img.testimonials {
 div.t-section {
 	margin-bottom: 1em;
 	overflow: auto;
-	border: 1px solid black;
 	padding: 1em;
 	border-radius: .25em;
-	background-color: white;
+	background-color: #afb9ce !important;
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5) !important;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5) !important;
 }
 
 div.t-section p {
@@ -177,7 +198,21 @@ div.testimonials img {
 }
 
 div.testimonials {
-	padding: 1em;
+	margin: 0;
+}
+
+div.resume ul {
+	border: 1px solid black;
+	border-radius: .35em;
+}
+
+div.resume-certificates {
+	border: .1px solid black;
+	background-color: #afb9ce;
+	margin: .9em .55em;
+	border-radius: .25em;
+	padding: 0 .25em;
+	
 }
 
 div.certificates img {
@@ -199,6 +234,7 @@ div.item img {
 	display: block;
 }
 
+
 img {
 	width: 200px;
 	height: 200px;
@@ -207,7 +243,7 @@ img {
 img.facebook {
 	height: 3em;
 	width: 7em;
-	
+	margin-bottom: .5em;
 }
 
 textarea {
@@ -219,11 +255,10 @@ textarea {
 }
 
 div.mission {
-
 	padding: .25em;
-	border-radius: .25em;
-	margin-top: .5em;
-	
+	margin-top: -.25em;
+	border-bottom: 2.5px solid black;
+	border-top: 2.5px solid black;
 }
 
 div.mission p,
@@ -232,85 +267,85 @@ div.services ul li
 	font-size: 1.25em;
 }
 
-div.contact {
-	margin-right: -1em;
-	padding-bottom: .25em;
-}
+
 
 a.email-button {
-	margin: 0 auto .75em auto;
-	display: block;
 	width: 7em;
-	font-weight: bold;
+	margin: 0 auto 1em auto;
+	
 }
 
+div.contact {
+	padding: 1em;
+}
 
-
+div.contact h2 {
+	padding-bottom: .25em;
+	border-bottom: 2px solid black;
+	text-align: left;
+	margin-top: 0;
+	width: 90%;
+}
 
 div.contact p {
-	font-size: 1.05em;
-	font-weight: bold;
-	text-align: center;
+	font-size: 1.5em;
+	
+	
 }
 
-div.third img {
+div.certificates img {
+	border: .25px solid grey;
+}
+
+div.current img {
 	display: block;
 	margin: 0 auto;
 }
 
-div.services {
-	padding: 0 1em;
-	margin: .5em 0 -1em 0;
+
+div.third {
+	border-top: 2.5px solid black;
 	
-	border-radius: .25em;
 }
 
-div.services h2,
-div.third h2  {
-	margin: .25em;
-}
 
-div.mission,
-div.services,
-div.current,
-div.contact {
-	
-	background-color: #e7eef4 !important;
-	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
-}
-
-div.current,
-div.contact {
-	
-	border-radius: .25em;
-}
-
-div.contact {
-	margin-left: -1.5em;
-}
 
 div.current {
 	margin-left: -1em;
 }
 
-div.third {
-	padding: 1em;
-	margin-bottom: -.5em
-}
-
-div.testimonials h1 {
+div.resume h1 {
 	text-align: center;
-	margin: .25em 0;
 }
 
 
+div.resume {
+	width: 50em;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	
+}
+
+div.resume img {
+	height: 200px;
+	width: 130px;
+	margin: 0 auto;
+	display: block;
+	border: 1px solid black;
+}
+
+
+div.certificates {
+	clear: both;
+	text-align: center;
+}
 
 footer {
 	clear: both;
 	text-align: center;
 	padding: 1em 0;
-	border-top: 1px solid #2f343a;
+	border-top: 1.75px solid black;
 	background-color: grey;
 	overflow: auto;
 	background-color: #4d75c9 !important;
@@ -337,11 +372,60 @@ footer p {
 		margin-right: -1em;
 	}
 	
-	div.contact {
-		margin-left: -1em;
+	div.contact p {
+		font-size: 1em;
 	}
 	
-	div.contact p {
-		font-size: 1.5em;
+	div.contact-form {
+		margin: .5em 0 1em 0;
+	}
+
+	div.contact-info {
+		margin: 1em 0 1em 0;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	div.owner {
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	
+	
+	div.resume-list {
+		width: 85%;
+		float: none;
+		font-size: .9em;
+		margin: 0 auto;
+		
+	}
+
+	div.resume {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	div.jumbotron img.logo {
+		width: 300px;
+		height: 150px;
+	}
+	
+
+	
+	div.resume-list {
+		width: 90%
+	}
+
+	div.jumbotron img.banner {
+		height: 75px;
+		width: 300px;
+	}
+	
+	img.testimonials {
+		float: none;
+		display: block;
 	}
 }
