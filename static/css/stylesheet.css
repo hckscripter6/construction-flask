@@ -133,7 +133,6 @@ div.contact-form {
 }
 
 div.contact-info {
-	border: 1px solid grey;
 	margin: 1em 1em 1em -.6em;
 	padding: .5em;
 	border-radius: .5em;
@@ -168,13 +167,14 @@ img.testimonials {
 }
 
 div.t-section {
-	margin-bottom: 1em;
+	
 	overflow: auto;
-	padding: 1em;
+	margin: 1em;
+	/*padding: 1em;
 	border-radius: .25em;
 	background-color: #afb9ce !important;
 	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5) !important;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5) !important;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5) !important;*/
 }
 
 div.t-section p {
@@ -198,7 +198,17 @@ div.testimonials img {
 }
 
 div.testimonials {
-	margin: 0;
+	border: .1px solid black;
+	background-color: #afb9ce;
+	margin: .9em .55em;
+	border-radius: .25em;
+	padding: 0 .25em;
+	background-color: #afb9ce !important;
+}
+
+div.testimonials h1 {
+	text-align: center;
+
 }
 
 div.resume ul {
@@ -206,13 +216,28 @@ div.resume ul {
 	border-radius: .35em;
 }
 
-div.resume-certificates {
+div.wrap {
 	border: .1px solid black;
 	background-color: #afb9ce;
 	margin: .9em .55em;
 	border-radius: .25em;
 	padding: 0 .25em;
 	
+}
+
+div.projects img.higher {
+	height: 250px;
+	width: 200px;
+}
+
+div.projects img.wider {
+	height: 200px;
+	width: 250px;
+}
+
+div.projects img.level {
+	height: 200px;
+	width: 200px;
 }
 
 div.certificates img {
@@ -235,10 +260,7 @@ div.item img {
 }
 
 
-img {
-	width: 200px;
-	height: 200px;
-}
+
 
 img.facebook {
 	height: 3em;
@@ -413,7 +435,11 @@ footer p {
 		height: 150px;
 	}
 	
-
+	div.testimonials img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: .5em;
+	}
 	
 	div.resume-list {
 		width: 90%
