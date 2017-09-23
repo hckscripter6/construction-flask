@@ -7,6 +7,8 @@ body {
 	color: black;
 	background-color: #e2ddd3;
 	font-family: "Bitter";
+	margin: 0;
+	padding: 0;
 
 }
 
@@ -94,6 +96,10 @@ div.services ul {
 	border-radius: .1em;
 }
 
+div.services h2 {
+	margin: .35em 0;
+}
+
 div.mission h2 {
 	margin: .25em 0;
 	display: none;
@@ -116,6 +122,7 @@ div.current img {
 div.services {
 	background-color: #4d75c9 !important;
 }
+
 
 h2 {
 	text-align: center;
@@ -212,32 +219,86 @@ div.testimonials h1 {
 }
 
 div.resume ul {
-	border: 1px solid black;
+	border: .25px solid black;
 	border-radius: .35em;
 }
 
 div.wrap {
-	border: .1px solid black;
+	border: 1px solid #263049;
 	background-color: #afb9ce;
 	margin: .9em .55em;
 	border-radius: .25em;
 	padding: 0 .25em;
-	
 }
 
-div.projects img.higher {
+div.wrap h1 {
+	margin: .35em 0;
+}
+
+div.certificates img {
+	height: 200px;
+	width: 225px;
+}
+
+img.higher {
 	height: 250px;
 	width: 200px;
 }
 
-div.projects img.wider {
+img.wider {
 	height: 200px;
 	width: 250px;
 }
 
-div.projects img.level {
+img.level {
 	height: 200px;
 	width: 200px;
+}
+
+div.projects {
+	padding: .75em;	
+}
+
+div.projects div.groupings {
+	position: relative;
+	right: .48em;
+}
+
+div.projects h2 {
+	margin: .25em 0;
+}
+	
+
+div.projects img {
+	border: .25px solid black;
+}
+
+div.projects div.carousel {
+	border: 1px solid grey;
+	border-radius: .75em;
+	margin-bottom: 1em;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, .3);
+	padding: .25em;
+}
+
+div.projects img:nth-of-type(2) {
+	margin: 0 .25em;
+}
+
+div.projects img {
+	margin-bottom: 1em !important;
+}
+
+div.projects h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 3em;
+}
+
+div.projects h3 {
+	font-size: 1.25em;
+	text-align: center;
 }
 
 div.certificates img {
@@ -363,6 +424,14 @@ div.certificates {
 	text-align: center;
 }
 
+div.wrap div.contact {
+	margin-top: .75em;
+}
+
+div.wrap div.contact p {
+	font-size: 1.25em;
+}
+
 footer {
 	clear: both;
 	text-align: center;
@@ -394,9 +463,7 @@ footer p {
 		margin-right: -1em;
 	}
 	
-	div.contact p {
-		font-size: 1em;
-	}
+
 	
 	div.contact-form {
 		margin: .5em 0 1em 0;
@@ -404,6 +471,25 @@ footer p {
 
 	div.contact-info {
 		margin: 1em 0 1em 0;
+	}
+	
+	img.higher {
+		height: 225px;
+		width: 175px;
+	}
+
+	img.wider {
+		height: 175px;
+		width: 225px;
+	}
+
+	img.level {
+		height: 175px;
+		width: 175px;
+	}
+	
+	div.t-section p {
+		font-size: 1em;
 	}
 }
 
@@ -427,12 +513,25 @@ footer p {
 	div.resume {
 		width: 100%;
 	}
+
+	div.projects div.groupings {
+		position: static
+	}
+	
+	div.projects h2 {
+		font-size: 1.85em;
+	}
+
 }
 
 @media screen and (max-width: 500px) {
 	div.jumbotron img.logo {
 		width: 300px;
 		height: 150px;
+	}
+	
+	div.contact p {
+		font-size: 1.35em;
 	}
 	
 	div.testimonials img {
@@ -454,4 +553,41 @@ footer p {
 		float: none;
 		display: block;
 	}
+	
+	div.wrap {
+		margin: .5em 0;
+	}
+
+	div.t-section p {
+		margin-top: .25em;
+		font-size: 1em;
+	}	
+	
+	div.t-section h3 {
+		font-size: 1.15em;
+		font-weight: bold;
+		text-align: center;
+	}
+	
+	div.mission h2 {
+		font-size: 1.65em;
+	}
+	
+	div.mission p {
+		font-size: 1em;
+	}
+	
+	div.services ul li {
+		font-size: 1.075em;
+	}
+	
+	div.projects h3 {
+		font-size: 1.1em;
+	}
+	
+	div.projects h2 {
+		font-size: 1.7em; 
+	}
+	
+
 }

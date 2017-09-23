@@ -17,10 +17,6 @@
 	<script>
 		$(document).ready(function(){
 			$("div.mission p, div.mission h2").fadeIn("swing");
-		
-			$("ul").child().mouseenter(function(){
-				$("li").css("font-size", "1.25em");
-			});
 		});
 	</script>
 	<div class="mission">
@@ -97,15 +93,15 @@
 				<div class="current">
 					<h2>Current Projects</h2>
 					<div class="row">
-						<div class="col-md-4 col-xs-6">
+						<div class="col-md-4">
 							<img src="{{ url_for('static', filename='images/demo1.jpg') }}">
 							<p>Bathroom Remodel</p>
 						</div>
-						<div class="col-md-4 col-xs-6">
+						<div class="col-md-4">
 							<img src="{{ url_for('static', filename='images/demo2.jpg') }}">
 							<p>Siding & Deck</p>
 						</div>
-						<div class="col-md-4 col-xs-6">
+						<div class="col-md-4">
 							<img src="{{ url_for('static', filename='images/demo3.jpg') }}">
 							<p>Deck</p>
 						</div>
