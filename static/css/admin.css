@@ -1,11 +1,53 @@
-nav {
-	background-color: black !important;
-	border: 1px solid black !important;
-	border-radius: 0px !important;
+div.upload-images h2 {
+	font-size: 1.25em;
+}
+
+div.upload-images {
+	margin: 2.5em;
+}
+
+
+
+body, html  {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+h2 a {
+	color: #222633;
+}
+
+div.container {
+	background-color: rgba(48, 68, 109, 0.6);
+	
+}
+
+ul li a {
+	color: #222633;
 }
 
 body {
-	background-color: grey;
+	background-color: #8e9fa9;
+	color: black !important;
 }
 
-img 
+div.container {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	min-height: 100%;
+}
+
+div.image-edit img {
+	height: 150px;
+	width: auto;
+	float: left;
+	margin: .25em;
+	border: 1px solid black;
+}
+
+div.image-edit img:hover {
+	height: 147.5px;
+}

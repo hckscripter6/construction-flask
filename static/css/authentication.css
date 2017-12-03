@@ -1,0 +1,19 @@
+body {
+	background: url('../images/login-background.jpg');
+	background-attachment: fixed;
+}
+
+form {
+	margin: 12.5em auto;
+	width: 25em;
+	border: 1px solid grey;
+	border-radius: 15%;
+	padding: 1em;
+	background-color: rgba(88, 128, 178, 0.7);
+	border: 1px inset grey;
+}
+
+form h2 {
+	margin: 0;
+	text-align: center;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Error Message</title>
+	<style>
+		
+		div.error_message {
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+		h1 {
+			color: red;
+		}
+		
+		img {
+			margin: 0 auto;
+			height: auto;
+			max-width: 25em;
+		}
+	</style>
+  </head>
+  <body>
+	<div class="error_message">
+		<h1>D'oh! This image has already been uploaded to the projects folder</h1>
+		<p>If you need this image to be uploaded to this area of the projects section, then find where the image was already uploaded, delete it then upload it again</p>
+		<img src="{{ url_for('static', filename='images/simpsons.jpg') }}">
+	</div>
+  </body>
+</html>

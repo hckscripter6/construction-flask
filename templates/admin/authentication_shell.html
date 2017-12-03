@@ -18,7 +18,7 @@
     <!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Stylesheet -->
-	<link href="{{ url_for('static', filename = 'css/admin.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename = 'css/authentication.css') }}" rel="stylesheet">
 	
     {%- endblock styles %}
 	
@@ -35,11 +35,11 @@
   </head>
   <body{% block body_attribs %}{% endblock body_attribs %}>
     {% block body -%}
-		<div class="container">
+	
 		{% block content %}
 			Edit content page
 		{% endblock %}
-		</div>
+
 
     {%- endblock body %}
   </body>

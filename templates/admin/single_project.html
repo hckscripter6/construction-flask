@@ -1,0 +1,12 @@
+{% extends "admin/admin.html" %}
+{% from "_formhelpers.html" import render_field, render_submit %}
+
+{% block content %}
+	<div class="image-edit">
+	<h2>{{ project_title.project }}</h2>
+	<h3>Click on an image to delete it</h3>
+	{% for display in project %}
+		<a href="/dashboard/projects/{{ display.tag }}/{{ display.filename }}"><img src="{{ url_for('static', filename='images/uploads/'+display.filename) }}"></a>
+	{% endfor %}
+	</div>
+{% endblock %}

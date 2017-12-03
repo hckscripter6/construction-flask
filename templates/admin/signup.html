@@ -1,0 +1,16 @@
+{% extends "admin/authentication_shell.html" %}
+{% from "_formhelpers.html" import render_field, render_submit %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<form class="form-signup" method="POST" action="/signup">
+	<h2 class="form-signup-heading">Please Register</h2>
+	{{ register.hidden_tag() }}
+	{{ render_field(register.email, class="form-control") }}
+	{{ render_field(register.username, class="form-control") }}
+	{{ render_submit(register.submit, class="btn btn-md btn-primary") }}
+</form>
+{% endblock %}
