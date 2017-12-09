@@ -178,7 +178,7 @@ def projects():
 	basement = Projects.query.filter_by(tag="basement").order_by(Projects.id.desc()).all()
 	bathroom = Projects.query.filter_by(tag="bathroom").order_by(Projects.id.desc()).all()
 	tile = Projects.query.filter_by(tag="tile").order_by(Projects.id.desc()).all()
-	#walls = Projects.query.filter_by(tag="walls").order_by(Projects.id.desc()).all()
+	walls = Projects.query.filter_by(tag="walls").order_by(Projects.id.desc()).all()
 	office = Projects.query.filter_by(tag="office").order_by(Projects.id.desc()).all()
 	fencing = Projects.query.filter_by(tag="fencing").order_by(Projects.id.desc()).all()
 	handicap = Projects.query.filter_by(tag="handicap").order_by(Projects.id.desc()).all()
@@ -259,12 +259,11 @@ def delete(tag, filename):
 	os.remove('static/images/uploads/'+ image.filename)
 	db.session.delete(image)
 	db.session.commit()
-	redirect('admin')
-	return redirect(url_for('admin_projects'))
+	return 'The image has been successfuly deleted'
 	
 @app.route('/dashboard/projects', methods=['GET', 'POST'])
 @login_required
-def admin_projects():  #The programming comments are listed above each line of programming
+def admin_projects():  #Each comment refers to the line of code below it
 #Concrete flatwork
 	#access form data 
 	concrete = ConcreteForm()
@@ -276,7 +275,7 @@ def admin_projects():  #The programming comments are listed above each line of p
 		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
 		#if file already exists in folder prior to submission then display page that gives error message
 		if FileAlreadyUploaded:
-			return 'The file is already in the folder'
+			return render_template('admin/file_duplicate_message.html')
 		#else if file does not exist in folder prior to submission.....
 		else:
 			#upload file to folder
@@ -565,14 +564,16 @@ def admin_projects():  #The programming comments are listed above each line of p
 		
 	window = WindowForm()
 	if window.validate_on_submit() and 'window' in request.files:
-	#upload to folder
-		filename = photos.save(request.files['window'])
-	#upload to database
 		file = request.files['window']
-		newFile = Projects(filename=file.filename, project="Window", tag="window")
-		db.session.add(newFile)
-		db.session.commit()
-		
+		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		if FileAlreadyUploaded:
+			return render_template('admin/file_duplicate_message.html')
+		else:
+			filename = photos.save(request.files['window'])
+			newFile = Projects(filename=file.filename, project="Window", tag="window")
+			db.session.add(newFile)
+			db.session.commit()
+		return redirect('dashboard/projects/window')		
 		
 	roof = RoofForm()
 	if roof.validate_on_submit() and 'roof' in request.files:

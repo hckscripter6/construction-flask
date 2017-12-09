@@ -35,6 +35,13 @@
   </head>
   <body{% block body_attribs %}{% endblock body_attribs %}>
     {% block body -%}
+		{% if current_user.is_authenticated %}
+			<div class="admin-panel">
+				<div class="right-side">
+					<a href="/">main site</a> | <a href="/logout">logout?</a>
+				</div>
+			</div>
+		{% endif %}
 		<div class="container">
 		{% block content %}
 			Edit content page

@@ -2,10 +2,9 @@
 {% from "_formhelpers.html" import render_field, render_submit %}
 
 {% block content %}
-	<div class="image-edit">
+	<div class="single-image-edit">
+	  <h3>Are you sure you want to delete this photo?</h3>
+	  <a href="/dashboard/projects/{{ image.tag }}/{{ image.filename }}/delete" class="btn btn-md btn-danger">Delete Image</a>
 		<img src="{{ url_for('static', filename='images/uploads/'+image.filename) }}">
-	</div>
-	
-		<a href="/dashboard/projects/{{ image.tag }}/{{ image.filename }}/delete" class="btn btn-md btn-danger">Delete Image</a>
-	
+	</div>	
 {% endblock %}

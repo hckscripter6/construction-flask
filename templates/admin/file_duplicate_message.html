@@ -6,25 +6,40 @@
 	<style>
 		
 		div.error_message {
+			width: 50em;
 			margin: 0 auto;
-			text-align: center;
 		}
 		
 		h1 {
 			color: red;
+			text-align: center;
 		}
 		
 		img {
 			margin: 0 auto;
 			height: auto;
+			display: block;
 			max-width: 25em;
 		}
+		
+		p {
+			text-align: center;
+		}
+		
+		ol li {
+			margin-bottom: .5em;
+		}
+		
 	</style>
   </head>
   <body>
 	<div class="error_message">
-		<h1>D'oh! This image has already been uploaded to the projects folder</h1>
-		<p>If you need this image to be uploaded to this area of the projects section, then find where the image was already uploaded, delete it then upload it again</p>
+		<h1>D'oh! It seems we have reached an error</h1>
+		<p>Possible reasons why:</p>
+		<ol>
+			<li>The file already exists in the projects folder.  <br><strong>Solution:</strong> find out which project it has been uploaded to, delete it, then upload again.</li>
+			<li>A file wasn't selected upon submitting. <br><strong>Solution:</strong> Select an image before submitting it.</li>
+		</ol>
 		<img src="{{ url_for('static', filename='images/simpsons.jpg') }}">
 	</div>
   </body>

@@ -1,12 +1,15 @@
 div.upload-images h2 {
-	font-size: 1.25em;
+	font-size: 1.15em;
 }
 
 div.upload-images {
-	margin: 2.5em;
+	margin-top: 0;
 }
 
-
+div.upload-images p,
+div.upload-images h1 {
+	text-align: center;
+}
 
 body, html  {
 	width: 100%;
@@ -14,30 +17,58 @@ body, html  {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
+	background-color: #e3e3e3;
 }
 
 h2 a {
 	color: #222633;
+	font-weight: bold;
 }
 
-div.container {
-	background-color: rgba(48, 68, 109, 0.6);
-	
+h2 a:hover {
+	background-color: cornflowerblue;
 }
+
+.colorOver {
+	background-color: #286090;
+	border-radius: .25em;
+}
+
+form {
+	margin-bottom: 2em;
+}
+
 
 ul li a {
 	color: #222633;
 }
 
 body {
-	background-color: #8e9fa9;
 	color: black !important;
 }
 
 div.container {
-	border-right: 1px solid black;
-	border-left: 1px solid black;
 	min-height: 100%;
+}
+
+div.admin-panel {
+	background-color: black;
+	color: white;
+	padding: .25em 1em .25em .25em;
+	width: 100%;
+	text-align: center;
+}
+
+div.single-image-edit {
+	text-align: center;
+}
+
+div.single-image-edit img {
+	height: 300px;
+	width: auto;
+	display: block;
+	margin: .75em auto 0 auto;
+	border: 1px solid black;
 }
 
 div.image-edit img {

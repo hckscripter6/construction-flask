@@ -2,223 +2,236 @@
 {% from "_formhelpers.html" import render_field, render_submit %}
 
 {% block content %}
-<h1>Edit Project Images</h1>
-<div class="content-table">
-	 <div class="row">
-		<div class="col-sm-4">
-			<ul class="projects">
-				<li><a href="#concrete">Concrete Flatwork</li>
-				<li><a href="#decks">Decks</a></li>
-				<li><a href="#garage">Garages, Pole barnds, and Sheds</a></li>
-				<li><a href="#finished">Finished basement including greatroom bedroom, and bathroom</a></li>
-				<li><a href="#bathroom">Bathroom remodels</a></li>
-				<li><a href="#tile">Tile Work</a></li>
-				<li><a href="#walls">Added 3 walls and ceiling to make office area</a></li>
-				<li><a href="#converted>">Converted half of a garage into a very nice office</a></li>
-			</ul>
+<div class="upload-images">
+<h1>Upload images to projects</h1>
+<p>Click on project heading to see images</p>	
+	<div class="row">	
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/concrete">Concrete</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ concrete.csrf_token }}
+				{{ render_field(concrete.concrete) }}
+				{{ render_submit(concrete.submit) }}
+			</form>
 		</div>
-		<div class="col-sm-4">		
-			<ul class="projects">
-				<li><a href="#fencing">Fencing</a></li>
-				<li><a href="#handicap">Handicap Shower</a></li>
-				<li><a href="#siding">Siding</a></li>
-				<li><a href="#island">Custom Island</a></li>
-				<li><a href="#flooring">Flooring</a></li>
-				<li><a href="#wood">Wood Stairs</a></li>
-				<li><a href="#railing">Railing</a></li>
-				<li><a href="#vanity">Custom vanity</a></li>
-			</ul>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/decks">Decks</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ decks.csrf_token }}
+				{{ render_field(decks.decks) }}
+				{{ render_submit(decks.submit) }}
+			</form>
 		</div>
-		<div class="col-sm-4">	
-			<ul class="projects">
-				<li><a href="#fireplace">Custom Fireplace</a></li>
-				<li><a href="#playhouse">Kids Playhouse</a></li>
-				<li><a href="#bunkbeds">Kids bunkbeds</a></li>
-				<li><a href="#pantry">Custom Kitchen Pantry</li>
-				<li><a href="#stair">Stair railing</a></li>
-				<li><a href="#window">Egress window well</a></li>
-				<li><a href="#kitchen">Custom Kitchen</a></li>
-				<li><a href="#window">Window</a></li>
-				<li><a href="#reroof">New siding and re-roof</a></li>	
-			</ul>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/garages">Garages, Pole barnds, and Sheds</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ garages.csrf_token }}
+				{{ render_field(garages.garages) }}
+				{{ render_submit(garages.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/basement">Finished basement</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ basement.csrf_token }}
+				{{ render_field(basement.basement) }}
+				{{ render_submit(basement.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/bathroom">Bathroom Remodels</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ bathroom.csrf_token }}
+				{{ render_field(bathroom.bathroom) }}
+				{{ render_submit(bathroom.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/tile">Tile Work</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ tile.csrf_token }}
+				{{ render_field(tile.tile) }}
+				{{ render_submit(tile.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/office">Convert garage to office</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ office.csrf_token }}
+				{{ render_field(office.office) }}
+				{{ render_submit(office.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/fencing">Fencing</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ fencing.csrf_token }}
+				{{ render_field(fencing.fencing) }}
+				{{ render_submit(fencing.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/handicap">Handicap Shower</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ handicap.csrf_token }}
+				{{ render_field(handicap.handicap) }}
+				{{ render_submit(handicap.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/siding">Siding</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ siding.csrf_token }}
+				{{ render_field(siding.siding) }}
+				{{ render_submit(siding.submit) }}
+			</form>
+		</div>
+				
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/island">Custom Island</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ island.csrf_token }}
+				{{ render_field(island.island) }}
+				{{ render_submit(island.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/flooring">Flooring</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ flooring.csrf_token }}
+				{{ render_field(flooring.flooring) }}
+				{{ render_submit(flooring.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/stairs">Wood Stairs</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ stairs.csrf_token }}
+				{{ render_field(stairs.stairs) }}
+				{{ render_submit(stairs.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/railing">Railing</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ railing.csrf_token }}
+				{{ render_field(railing.railing) }}
+				{{ render_submit(railing.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/vanity">Custom Vanity</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ vanity.csrf_token }}
+				{{ render_field(vanity.vanity) }}
+				{{ render_submit(vanity.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/fireplace">Custom Fireplace</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ fireplace.csrf_token }}
+				{{ render_field(fireplace.fireplace) }}
+				{{ render_submit(fireplace.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/playhouse">Kids Playhouse</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ playhouse.csrf_token }}
+				{{ render_field(playhouse.playhouse) }}
+				{{ render_submit(playhouse.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/bunkbeds">Kids Bunkbeds</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ bunkbeds.csrf_token }}
+				{{ render_field(bunkbeds.bunkbeds) }}
+				{{ render_submit(bunkbeds.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/pantry">Custom Kitchen Pantry</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ pantry.csrf_token }}
+				{{ render_field(pantry.pantry) }}
+				{{ render_submit(pantry.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/railing">Stair Railing</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ stair.csrf_token }}
+				{{ render_field(stair.stair) }}
+				{{ render_submit(stair.submit) }}
+			</form>
+		</div>
+
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/egress">Egress Window Well</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ egress.csrf_token }}
+				{{ render_field(egress.egress) }}
+				{{ render_submit(egress.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/kitchen">Custom Kitchen</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ kitchen.csrf_token }}
+				{{ render_field(kitchen.kitchen) }}
+				{{ render_submit(kitchen.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/window">Window</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ window.csrf_token }}
+				{{ render_field(window.window) }}
+				{{ render_submit(window.submit) }}
+			</form>
+		</div>
+		
+		<div class="col-md-4 col-sm-6">
+			<h2><a href="projects/reroof">New Siding and Re-roof</a></h2>
+			<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+				{{ roof.csrf_token }}
+				{{ render_field(roof.roof) }}
+				{{ render_submit(roof.submit) }}
+			</form>
 		</div>
 	</div>
-</div>
-<div class="upload-images">
-	
-	<h2><a href="projects/concrete">Concrete</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ concrete.csrf_token }}
-		{{ render_field(concrete.concrete) }}
-		{{ render_submit(concrete.submit) }}
-	</form>
-	
-	<h2><a href="projects/decks">Decks</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ decks.csrf_token }}
-		{{ render_field(decks.decks) }}
-		{{ render_submit(decks.submit) }}
-	</form>
-
-	<h2><a href="projects/garages">Garages, Pole barnds, and Sheds</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ garages.csrf_token }}
-		{{ render_field(garages.garages) }}
-		{{ render_submit(garages.submit) }}
-	</form>
-
-	<h2><a href="projects/basement">Finished basement including greatroom bedroom, and bathroom</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ basement.csrf_token }}
-		{{ render_field(basement.basement) }}
-		{{ render_submit(basement.submit) }}
-	</form>
-
-	<h2><a href="projects/bathroom">Bathroom Remodels</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ bathroom.csrf_token }}
-		{{ render_field(bathroom.bathroom) }}
-		{{ render_submit(bathroom.submit) }}
-	</form>
-
-	<h2><a href="projects/tile">Tile Work</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ tile.csrf_token }}
-		{{ render_field(tile.tile) }}
-		{{ render_submit(tile.submit) }}
-	</form>
-		
-	<h2><a href="projects/office">Converted half of a garage into a very nice office</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ office.csrf_token }}
-		{{ render_field(office.office) }}
-		{{ render_submit(office.submit) }}
-	</form>
-
-	<h2><a href="projects/fencing">Fencing</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ fencing.csrf_token }}
-		{{ render_field(fencing.fencing) }}
-		{{ render_submit(fencing.submit) }}
-	</form>
-
-	<h2><a href="projects/handicap">Handicap Shower</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ handicap.csrf_token }}
-		{{ render_field(handicap.handicap) }}
-		{{ render_submit(handicap.submit) }}
-	</form>
-
-	<h2><a href="projects/siding">Siding</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ siding.csrf_token }}
-		{{ render_field(siding.siding) }}
-		{{ render_submit(siding.submit) }}
-	</form>
-
-	<h2><a href="projects/island">Custom Island</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ island.csrf_token }}
-		{{ render_field(island.island) }}
-		{{ render_submit(island.submit) }}
-	</form>
-
-	<h2><a href="projects/flooring">Flooring</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ flooring.csrf_token }}
-		{{ render_field(flooring.flooring) }}
-		{{ render_submit(flooring.submit) }}
-	</form>
-
-	<h2><a href="projects/stairs">Wood Stairs</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ stairs.csrf_token }}
-		{{ render_field(stairs.stairs) }}
-		{{ render_submit(stairs.submit) }}
-	</form>
-
-	<h2><a href="projects/railing">Railing</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ railing.csrf_token }}
-		{{ render_field(railing.railing) }}
-		{{ render_submit(railing.submit) }}
-	</form>
-
-	<h2><a href="projects/vanity">Custom Vanity</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ vanity.csrf_token }}
-		{{ render_field(vanity.vanity) }}
-		{{ render_submit(vanity.submit) }}
-	</form>
-
-	<h2><a href="projects/fireplace">Custom Fireplace</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ fireplace.csrf_token }}
-		{{ render_field(fireplace.fireplace) }}
-		{{ render_submit(fireplace.submit) }}
-	</form>
-
-	<h2><a href="projects/playhouse">Kids Playhouse</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ playhouse.csrf_token }}
-		{{ render_field(playhouse.playhouse) }}
-		{{ render_submit(playhouse.submit) }}
-	</form>
-
-	<h2><a href="projects/bunkbeds">Kids Bunkbeds</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ bunkbeds.csrf_token }}
-		{{ render_field(bunkbeds.bunkbeds) }}
-		{{ render_submit(bunkbeds.submit) }}
-	</form>
-
-	<h2><a href="projects/pantry">Custom Kitchen Pantry</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ pantry.csrf_token }}
-		{{ render_field(pantry.pantry) }}
-		{{ render_submit(pantry.submit) }}
-	</form>
-
-	<h2><a href="projects/railing">Stair Railing</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ stair.csrf_token }}
-		{{ render_field(stair.stair) }}
-		{{ render_submit(stair.submit) }}
-	</form>
-
-	<h2><a href="projects/egress">Egress Window Well</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ egress.csrf_token }}
-		{{ render_field(egress.egress) }}
-		{{ render_submit(egress.submit) }}
-	</form>
-
-	<h2><a href="projects/kitchen">Custom Kitchen</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ kitchen.csrf_token }}
-		{{ render_field(kitchen.kitchen) }}
-		{{ render_submit(kitchen.submit) }}
-	</form>
-
-	<h2><a href="projects/window">Window</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ window.csrf_token }}
-		{{ render_field(window.window) }}
-		{{ render_submit(window.submit) }}
-	</form>
-
-	<h2><a href="projects/reroof">New Siding and Re-roof</a></h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ roof.csrf_token }}
-		{{ render_field(roof.roof) }}
-		{{ render_submit(roof.submit) }}
-	</form>
 </div>
 
 <script>
 $(function() {
 	$('label').hide();
-	$('form').after('<hr>');
+	$('.row').after('<hr>');
+	$('input[type="submit"]').attr("class", "btn btn-primary btn-xs");
+	$('input[type="file"]').addClass("colorOver");
+	
+	
 	
 });
 </script>

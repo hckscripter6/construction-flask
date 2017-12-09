@@ -35,6 +35,13 @@
   </head>
   <body{% block body_attribs %}{% endblock body_attribs %}>
     {% block body -%}
+		{% if current_user.is_authenticated %}
+			<div class="admin-panel">
+				<div class="right-side">
+					<a href="/dashboard/projects">admin dashboard</a> | <a href="/logout">logout?</a>
+				</div>
+			</div>
+		{% endif %}
 		{% block navbar %}
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
