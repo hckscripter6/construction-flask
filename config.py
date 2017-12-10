@@ -6,3 +6,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://pubmupmhagrshg:99f9def95ffb6
 app.config['SECRET_KEY'] = 'jfeiios;alsei*#@@!fdkj;sa'
 db = SQLAlchemy(app)
 
+#postgresql://postgres:123qweasdzxc!@#@localhost/briney
