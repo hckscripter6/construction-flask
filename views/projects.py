@@ -9,7 +9,7 @@ from forms.projects import ConcreteForm, DeckForm, BasementForm, GarageForm, Bat
 
 
 photos = UploadSet('photos', IMAGES)
-app.config['UPLOADED_PHOTOS_DEST'] = 'brineyconstruction.s3.amazonaws.com/projects'
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/images/projects'
 configure_uploads(app, photos)
 
 @app.route('/dashboard/projects/<tag>', methods=['GET', 'POST'])
@@ -46,7 +46,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 		#Assign file request data to variable
 		file = request.files['concrete']
 		#Assign function (that checks if file already exists in folder) to a variable
-		FileAlreadyUploaded = os.path.exists("brineyconstruction.s3.amazonaws.com/projects/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		#if file already exists in folder prior to submission then display page that gives error message
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
