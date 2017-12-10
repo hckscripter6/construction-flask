@@ -8,7 +8,7 @@ from forms.projects import ConcreteForm, DeckForm, BasementForm, GarageForm, Bat
 
 
 photos = UploadSet('photos', IMAGES)
-app.config['UPLOADED_PHOTOS_DEST'] = 'static/images/uploads'
+app.config['UPLOADED_PHOTOS_DEST'] = 'static/images/projects'
 configure_uploads(app, photos)
 
 @app.route('/dashboard/projects/<tag>', methods=['GET', 'POST'])
