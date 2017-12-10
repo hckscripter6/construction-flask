@@ -1,0 +1,609 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/*background: url('images/background.jpg');*/
+	color: black;
+	background-color: #e2ddd3;
+	font-family: "Bitter";
+	margin: 0;
+	padding: 0;
+	
+}
+
+nav {
+	margin-bottom: 0 !important;
+	background-color: #4d75c9 !important;
+	border-radius: 0 !important;
+	border: none !important;
+	border-bottom: 1.5px solid black !important;	
+	
+}
+
+div.admin-panel {
+	background-color: black;
+	color: white;
+	padding: .25em;
+	width: 100%;
+	text-align: center;
+}
+
+div.admin-panel a:hover {
+	color: blue;
+}
+
+
+
+
+ul.navbar-nav li a {
+	color: black !important;
+}
+
+ul.navbar-nav li a:hover {
+	background-color: white !important;
+}
+
+div.current p {
+	text-align: center;
+}
+
+div.jumbotron {
+	border-radius: 0 !important;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #abb0b8;
+	/*background-color: rgba(172, 175, 178, .7);*/
+	background: url('../images/jumbotron.jpg');
+}
+
+
+
+
+div.jumbotron h2 {
+	font-size: 1.9em;
+	font-weight: 600;
+	letter-spacing: .025em;
+	margin: .15em;
+}
+
+
+
+
+img.nav-img {
+	height: 2.8em;
+	width: 10em;
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+}
+
+div.jumbotron img.logo {
+	width: 400px;
+	height: 175px;
+	margin: 0;
+	opacity: 0.9;
+	filter: alpha(opacity=90); 
+	border-top: 1px solid #abb0b8;
+	border-right: 1px solid #abb0b8;
+	border-left: 1px solid #abb0b8;
+	border-bottom: 1px solid #abb0b8;
+	margin: .5em 0 0 0;
+}
+
+div.jumbotron img.banner {
+	height: 100px;
+	width: 400px;
+	position: relative;
+	right: .025em;
+	margin: 0 0 .5em 0;
+	border: 1px solid #abb0b8;
+}
+
+
+div.services ul {
+	padding: .25em 1em .25em 2.5em;
+	
+	border-radius: .1em;
+}
+
+div.services h2 {
+	margin: .35em 0;
+}
+
+div.mission h2 {
+	margin: .25em 0;
+	display: none;
+}
+
+div.mission p {
+	border-radius: .1em;
+	padding: .25em;
+	display: none;
+	
+}
+
+div.current img {
+	height: 200px;
+	width: 200px;
+	border: 1px solid black;
+	
+}
+
+div.services {
+	background-color: #4d75c9 !important;
+}
+
+
+
+
+.container {
+	/*background-color: rgba(191, 191, 224, 0.6);*/
+	padding: 0 .5em;
+}
+
+div.contact-form {
+	margin: 1em -.6em 1em 1em;
+	padding: .5em;
+	border-radius: .5em;
+}
+
+div.contact-info {
+	margin: 1em 1em 1em -.6em;
+	padding: .5em;
+	border-radius: .5em;
+	text-align: center;
+}
+
+div.contact-form input, 
+div.contact-form textarea {
+	border: 1px solid #9e9897 !important;
+}
+
+div.owner {
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+div.resume-list {
+	float: left;
+	width: 75%;
+}
+
+div.contact-form h2,
+div.contact-info h2 {
+	margin: 0;
+	padding: .15em .15em .25em .15em;
+}
+
+img.testimonials {
+	float: left;
+	border: 1px solid black;
+}
+
+div.t-section {
+	
+	overflow: auto;
+	margin: 1em;
+	/*padding: 1em;
+	border-radius: .25em;
+	background-color: #afb9ce !important;
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5) !important;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5) !important;*/
+}
+
+div.t-section p {
+	font-size: 1.15em;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+div.testimonials h3 {
+	margin: 0;
+}
+
+div.testimonials img {
+	margin-right: .5em;
+}
+
+div.testimonials {
+	border: .1px solid black;
+	background-color: #afb9ce;
+	margin: .9em .55em;
+	border-radius: .25em;
+	padding: 0 .25em;
+	background-color: #afb9ce !important;
+}
+
+div.testimonials h1 {
+	text-align: center;
+
+}
+
+div.resume ul {
+	border: .25px solid black;
+	border-radius: .35em;
+}
+
+div.wrap {
+	border: 1px solid #263049;
+	background-color: #afb9ce;
+	margin: .9em .55em;
+	border-radius: .25em;
+	padding: 0 .25em;
+}
+
+div.wrap h1 {
+	margin: .35em 0;
+}
+
+div.certificates img {
+	height: 200px;
+	width: 225px;
+}
+
+img.higher {
+	height: 250px;
+	width: 200px;
+}
+
+img.wider {
+	height: 200px;
+	width: 250px;
+}
+
+img.level {
+	height: 200px;
+	width: 200px;
+}
+
+div.projects {
+	padding: .75em;	
+}
+
+div.projects div.groupings {
+	position: relative;
+	right: .48em;
+}
+
+div.projects h2 {
+	margin: .25em 0;
+}
+	
+
+div.projects img {
+	border: .25px solid black;
+}
+
+div.projects div.carousel {
+	border: 1px solid grey;
+	border-radius: .75em;
+	margin-bottom: 1em;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, .3);
+	padding: .25em;
+}
+
+div.projects img:nth-of-type(2) {
+	margin: 0 .25em;
+}
+
+div.projects img {
+	margin-bottom: 1em !important;
+}
+
+div.projects h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 3em;
+}
+
+div.projects h3 {
+	font-size: 1.25em;
+	text-align: center;
+}
+
+div.certificates img {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 1em;
+}
+
+div.slide {
+	margin-bottom: 2em;
+}
+
+div.carousel {
+	margin: 0;
+}
+
+div.item img {
+	margin: 0 auto;
+	display: block;
+}
+
+
+
+
+img.facebook {
+	height: 3em;
+	width: 7em;
+	margin-bottom: .5em;
+}
+
+textarea {
+	height: 5em;
+}
+
+.groupings {
+	text-align: center;
+}
+
+div.mission {
+	padding: .25em;
+	margin-top: -.25em;
+	border-bottom: 2.5px solid black;
+	border-top: 2.5px solid black;
+}
+
+div.mission p,
+div.services ul li
+{
+	font-size: 1.25em;
+}
+
+
+
+a.email-button {
+	width: 7em;
+	margin: 0 auto 1em auto;
+	
+}
+
+div.contact {
+	padding: 1em;
+}
+
+div.contact h2 {
+	padding-bottom: .25em;
+	border-bottom: 2px solid black;
+	text-align: left;
+	margin-top: 0;
+	width: 90%;
+}
+
+div.contact p {
+	font-size: 1.5em;
+	
+	
+}
+
+div.certificates img {
+	border: .25px solid grey;
+}
+
+div.current img {
+	display: block;
+	margin: 0 auto;
+}
+
+
+div.third {
+	border-top: 2.5px solid black;
+	
+}
+
+
+
+div.current {
+	margin-left: -1em;
+}
+
+div.resume h1 {
+	text-align: center;
+}
+
+
+div.resume {
+	width: 50em;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	
+}
+
+div.resume img {
+	height: 200px;
+	width: 130px;
+	margin: 0 auto;
+	display: block;
+	border: 1px solid black;
+}
+
+
+div.certificates {
+	clear: both;
+	text-align: center;
+}
+
+div.wrap div.contact {
+	margin-top: .75em;
+}
+
+div.wrap div.contact p {
+	font-size: 1.25em;
+}
+
+footer {
+	clear: both;
+	text-align: center;
+	padding: 1em 0;
+	border-top: 1.5px solid black;
+	background-color: grey;
+	overflow: auto;
+	background-color: #4d75c9 !important;
+}
+
+footer p {
+	margin: 0;
+}
+
+img.resize {
+	height: 100px;
+	width: auto;
+}
+
+@media screen and (max-width: 990px) {
+	div.mission h2 {
+		font-size: 1.75em;
+	}
+	
+	div.mission p {
+		font-size: 1.1em;
+	}
+	
+	div.services ul li {
+		font-size: 1.1em;
+	}
+	
+	div.current {
+		margin-right: -1em;
+	}
+	
+
+	
+	div.contact-form {
+		margin: .5em 0 1em 0;
+	}
+
+	div.contact-info {
+		margin: 1em 0 1em 0;
+	}
+	
+	img.higher {
+		height: 225px;
+		width: 175px;
+	}
+
+	img.wider {
+		height: 175px;
+		width: 225px;
+	}
+
+	img.level {
+		height: 175px;
+		width: 175px;
+	}
+	
+	div.t-section p {
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	div.owner {
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	
+	
+	div.resume-list {
+		width: 85%;
+		float: none;
+		font-size: .9em;
+		margin: 0 auto;
+		
+	}
+
+	div.resume {
+		width: 100%;
+	}
+
+	div.projects div.groupings {
+		position: static
+	}
+	
+	div.projects h2 {
+		font-size: 1.85em;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	div.jumbotron img.logo {
+		width: 300px;
+		height: 150px;
+	}
+	
+	div.contact p {
+		font-size: 1.35em;
+	}
+	
+	div.testimonials img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: .5em;
+	}
+	
+	div.resume-list {
+		width: 90%
+	}
+
+	div.jumbotron img.banner {
+		height: 75px;
+		width: 300px;
+	}
+	
+	img.testimonials {
+		float: none;
+		display: block;
+	}
+	
+	div.wrap {
+		margin: .5em 0;
+	}
+
+	div.t-section p {
+		margin-top: .25em;
+		font-size: 1em;
+	}	
+	
+	div.t-section h3 {
+		font-size: 1.15em;
+		font-weight: bold;
+		text-align: center;
+	}
+	
+	div.mission h2 {
+		font-size: 1.65em;
+	}
+	
+	div.mission p {
+		font-size: 1em;
+	}
+	
+	div.services ul li {
+		font-size: 1.075em;
+	}
+	
+	div.projects h3 {
+		font-size: 1.1em;
+	}
+	
+	div.projects h2 {
+		font-size: 1.7em; 
+	}
+	
+
+}
