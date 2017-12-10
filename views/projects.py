@@ -98,7 +98,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 			newFile = Projects(filename=file.filename, project="Finished basement including greatroom, bedroom, and bathroom", tag="basement")
 			db.session.add(newFile)
 			db.session.commit()	
-		return redirect('/dashboard/projects/basements')
+		return redirect('/dashboard/projects/basement')
 		
 	bathroom = BathroomForm()
 	if bathroom.validate_on_submit() and 'bathroom' in request.files:
