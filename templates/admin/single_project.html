@@ -6,7 +6,7 @@
 	<h2>{{ project_title.project }}</h2>
 	<h3>Click on an image to delete it</h3>
 	{% for display in project %}
-		<a href="/dashboard/projects/{{ display.tag }}/{{ display.filename }}"><img src="{{ url_for('static', filename='images/projects/'+display.filename) }}"></a>
+		<a href="/dashboard/projects/{{ display.tag }}/{{ display.filename }}"><img src="{{ url_for('static', filename='brineyconstruction.s3.amazonaws.com/projects/'+display.filename) }}"></a>
 	{% endfor %}
 	</div>
 {% endblock %}
