@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
 from config import app
-from views import bucket_upload
 import os
 from flask_login import login_required
 from flask_uploads import UploadSet, configure_uploads, IMAGES
