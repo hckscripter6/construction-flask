@@ -11,6 +11,7 @@ Register
 	{{ register.hidden_tag() }}
 	{{ render_field(register.email, class="form-control") }}
 	{{ render_field(register.username, class="form-control") }}
+	{{ render_field(register.password, class="form-control") }}
 	{{ render_submit(register.submit, class="btn btn-md btn-primary") }}
 </form>
 {% endblock %}
