@@ -17,7 +17,6 @@ def load_user(user_id):
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
 	register = RegisterForm()
-	
 	if register.validate_on_submit():
 		hashed_password = generate_password_hash(register.password.data, method='sha256')
 		new_user = User(username=register.username.data, email=register.email.data, password=hashed_password)
