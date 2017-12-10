@@ -29,7 +29,7 @@ def picture_edit(tag, filename):
 @login_required
 def delete(tag, filename):
 	image = Projects.query.filter_by(filename=filename).first()
-	os.remove('static/images/uploads/'+ image.filename)
+	os.remove('static/images/projects/'+ image.filename)
 	db.session.delete(image)
 	db.session.commit()
 	return 'The image has been successfuly deleted'
@@ -45,7 +45,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 		#Assign file request data to variable
 		file = request.files['concrete']
 		#Assign function (that checks if file already exists in folder) to a variable
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		#if file already exists in folder prior to submission then display page that gives error message
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
@@ -64,7 +64,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	decks = DeckForm()
 	if decks.validate_on_submit() and 'decks' in request.files:
 		file = request.files['decks']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -77,7 +77,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	garages = GarageForm()
 	if garages.validate_on_submit() and 'garages' in request.files:
 		file = request.files['garages']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -90,7 +90,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	basement = BasementForm()
 	if basement.validate_on_submit() and 'basement' in request.files:
 		file = request.files['basement']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -103,7 +103,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	bathroom = BathroomForm()
 	if bathroom.validate_on_submit() and 'bathroom' in request.files:
 		file = request.files['bathroom']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -117,7 +117,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	tile = TileForm()
 	if tile.validate_on_submit() and 'tile' in request.files:
 		file = request.files['tile']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -130,7 +130,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	office = OfficeForm()
 	if office.validate_on_submit() and 'office' in request.files:
 		file = request.files['office']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -143,7 +143,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	fencing = FencingForm()
 	if fencing.validate_on_submit() and 'fencing' in request.files:
 		file = request.files['fencing']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -156,7 +156,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	handicap = HandicapForm()
 	if handicap.validate_on_submit() and 'handicap' in request.files:
 		file = request.files['handicap']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -169,7 +169,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	siding = SidingForm()
 	if siding.validate_on_submit() and 'siding' in request.files:
 		file = request.files['siding']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -182,7 +182,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	island = IslandForm()
 	if island.validate_on_submit() and 'island' in request.files:
 		file = request.files['island']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -195,7 +195,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	flooring = FlooringForm()
 	if flooring.validate_on_submit() and 'flooring' in request.files:
 		file = request.files['flooring']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -208,7 +208,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	stairs = StairsForm()
 	if stairs.validate_on_submit() and 'stairs' in request.files:
 		file = request.files['stairs']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -221,7 +221,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	railing = RailingForm()
 	if railing.validate_on_submit() and 'railing' in request.files:
 		file = request.files['railing']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -234,7 +234,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	vanity = VanityForm()
 	if vanity.validate_on_submit() and 'vanity' in request.files:
 		file = request.files['vanity']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -247,7 +247,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	fireplace = FireplaceForm()
 	if fireplace.validate_on_submit() and 'fireplace' in request.files:
 		file = request.files['fireplace']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -260,7 +260,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	playhouse = PlayhouseForm()
 	if fireplace.validate_on_submit() and 'playhouse' in request.files:
 		file = request.files['playhouse']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -273,7 +273,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	bunkbeds = BunkbedForm()
 	if bunkbeds.validate_on_submit() and 'bunkbeds' in request.files:
 		file = request.files['bunkbeds']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -286,7 +286,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	pantry = PantryForm()
 	if pantry.validate_on_submit() and 'pantry' in request.files:
 		file = request.files['pantry']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -299,7 +299,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	stair = StairForm()
 	if stair.validate_on_submit() and 'stair' in request.files:
 		file = request.files['stair']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -312,7 +312,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	egress = EgressForm()
 	if egress.validate_on_submit() and 'egress' in request.files:
 		file = request.files['egress']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -325,7 +325,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	kitchen = KitchenForm()
 	if kitchen.validate_on_submit() and 'kitchen' in request.files:
 		file = request.files['kitchen']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -338,7 +338,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	window = WindowForm()
 	if window.validate_on_submit() and 'window' in request.files:
 		file = request.files['window']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
@@ -351,7 +351,7 @@ def admin_projects():  #Each comment refers to the line of code below it
 	roof = RoofForm()
 	if roof.validate_on_submit() and 'roof' in request.files:
 		file = request.files['roof']
-		FileAlreadyUploaded = os.path.exists("static/images/uploads/"+file.filename)
+		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
