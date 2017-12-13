@@ -71,7 +71,7 @@
 	<div class="Garages">
 		<h2>Garages, Pole barnds, and Sheds</h2>
 		{% for display in garages %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 	<div class="Basement">

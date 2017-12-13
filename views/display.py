@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from models.projects import Projects
 from config import app
+from views.projects import s3projects
 
 index = False
 
@@ -43,7 +44,7 @@ def projects():
 	kitchen = Projects.query.filter_by(tag="kitchen").order_by(Projects.id.desc()).all()
 	window = Projects.query.filter_by(tag="window").order_by(Projects.id.desc()).all()
 	roof = Projects.query.filter_by(tag="roof").order_by(Projects.id.desc()).all()
-	return render_template('projects.html', concrete=concrete, decks=decks, garages=garages, basement=basement, bathroom=bathroom, tile=tile, office=office, fencing=fencing, handicap=handicap, siding=siding, island=island, flooring=flooring, stairs=stairs, railing=railing, vanity=vanity, fireplace=fireplace, playhouse= playhouse, bunkbeds=bunkbeds, pantry=pantry, stair=stair, egress=egress, kitchen=kitchen, window=window, roof=roof)
+	return render_template('projects.html', concrete=concrete, decks=decks, garages=garages, basement=basement, bathroom=bathroom, tile=tile, office=office, fencing=fencing, handicap=handicap, siding=siding, island=island, flooring=flooring, stairs=stairs, railing=railing, vanity=vanity, fireplace=fireplace, playhouse= playhouse, bunkbeds=bunkbeds, pantry=pantry, stair=stair, egress=egress, kitchen=kitchen, window=window, roof=roof, s3projects=s3projects)
 	
 @app.route('/contact')
 def contact():
