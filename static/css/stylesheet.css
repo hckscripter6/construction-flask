@@ -613,6 +613,11 @@ img.resize {
 	div.projects h2 {
 		font-size: 1.7em; 
 	}
-	
+
+	div.mission h2,
+	div.services h2,
+	div.third h2 {
+		text-align: center;
+	}	
 
 }
