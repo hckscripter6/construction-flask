@@ -1,28 +1,24 @@
 from flask import Flask, render_template, request, redirect, url_for
 from config import app
-import os
+import os, json, boto3
 from flask_login import login_required
-from flask_uploads import UploadSet, configure_uploads, IMAGES
 from models.projects import Projects, db
 from forms.projects import ConcreteForm, DeckForm, BasementForm, GarageForm, BathroomForm, BunkbedForm, EgressForm, FencingForm, FireplaceForm, FlooringForm, HandicapForm, IslandForm, KitchenForm, OfficeForm, PantryForm, PlayhouseForm, RailingForm, RoofForm, SidingForm, StairForm, StairsForm, TileForm, VanityForm, WindowForm
 
-
-photos = UploadSet('photos', IMAGES)
-app.config['UPLOADED_PHOTOS_DEST'] = 'static/images/projects'
-configure_uploads(app, photos)
+s3 = boto3.resource('s3')
+s3projects = "https://brineyconstruction-app.s3.amazonaws.com/projects"
 
 @app.route('/dashboard/projects/<tag>', methods=['GET', 'POST'])
 @login_required
 def project_edit(tag):
 	project_title = Projects.query.filter_by(tag=tag).first()
 	project = Projects.query.filter_by(tag=tag).order_by(Projects.id.desc()).all()
-	return render_template('admin/single_project.html', project=project, project_title=project_title)
+	return render_template('admin/single_project.html', s3projects=s3projects, project=project, project_title=project_title)
 	
 @app.route('/dashboard/projects/<tag>/<filename>', methods=['GET', 'POST'])
 @login_required
 def picture_edit(tag, filename):
 	image = Projects.query.filter_by(filename=filename).order_by(Projects.id.desc()).first()
-
 	return render_template('admin/single_image.html', image=image)
 	
 @app.route('/dashboard/projects/<tag>/<filename>/delete', methods=['GET', 'POST'])
@@ -75,13 +71,13 @@ def admin_projects():  #Each comment refers to the line of code below it
 		return redirect('/dashboard/projects/decks')
 		
 	garages = GarageForm()
-	if garages.validate_on_submit() and 'garages' in request.files:
+	if garages.validate_on_submit():
 		file = request.files['garages']
 		FileAlreadyUploaded = os.path.exists("static/images/projects/"+file.filename)
 		if FileAlreadyUploaded:
 			return render_template('admin/file_duplicate_message.html')
 		else:
-			filename = photos.save(request.files['garages'])
+			s3.Bucket('brineyconstruction-app').put_object(Key='projects/garages/'+str(file.filename), Body=file)
 			newFile = Projects(filename=file.filename, project="Garages, polebarns and sheds", tag="garages")
 			db.session.add(newFile)
 			db.session.commit()	
@@ -361,4 +357,5 @@ def admin_projects():  #Each comment refers to the line of code below it
 			db.session.commit()
 		return redirect('dashboard/projects/roof')
 		
-	return render_template('admin/projects.html', garages=garages, concrete=concrete, decks=decks, basement=basement, bathroom=bathroom, tile=tile, office=office, fencing=fencing, handicap=handicap, siding=siding, island=island, flooring=flooring, stairs=stairs, railing=railing, vanity=vanity, fireplace=fireplace, playhouse=playhouse, bunkbeds=bunkbeds, pantry=pantry, stair=stair, egress=egress, kitchen=kitchen, window=window, roof=roof)
+	return render_template('admin/projects.html', garages=garages, concrete=concrete, decks=decks, basement=basement, bathroom=bathroom, tile=tile, office=office, fencing=fencing, handicap=handicap, siding=siding, island=island, flooring=flooring, stairs=stairs, railing=railing, vanity=vanity, fireplace=fireplace, playhouse=playhouse, bunkbeds=bunkbeds, pantry=pantry, stair=stair, egress=egress, kitchen=kitchen, window=window, roof=roof, s3projects=s3projects)
+	
