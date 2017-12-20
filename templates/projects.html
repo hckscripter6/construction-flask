@@ -54,17 +54,21 @@
 		</div>
 	</div>
 		
-	<div class="concrete">
-		<h2 id="concrete">Concrete</h2>
-		{% for display in concrete %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
-		{% endfor %}
+	<div class="projects">
+			{% for display in projects %}
+				<div class="display.tag">
+					<h2>{{ display.name }}</h2>
+					{% for display_images in display.image.all() %}
+						<img class="resize" src="{{ s3projects +'/'+ display.name +'/'+ display_images.name }}">
+					{% endfor %}
+				</div>
+			{% endfor %}
 	</div>
 	
-	<div class="Decks">
+<!--	<div class="Decks">
 		<h2>Decks</h2>
 		{% for display in decks %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
@@ -77,154 +81,154 @@
 	<div class="Basement">
 		<h2>Finished basement including greatroom bedroom, and bathroom</h2>
 		{% for display in basement %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Bathroom">
 		<h2>Bathroom remodels</h2>
 		{% for display in bathroom %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Tile">
 		<h2>Tile Work</h2>
 		{% for display in tile %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Walls">
 		<h2>Added 3 walls and ceiling to make office area</h2>
 		{% for display in walls %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Office">
 		<h2>Converted half of a garage into a very nice office</h2>
 		{% for display in office %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Fencing">
 		<h2>Fencing</h2>
 		{% for display in fencing %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Handicap">
 		<h2>Handicap Shower</h2>
 		{% for display in handicap %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Siding">
 		<h2>Siding</h2>
 		{% for display in siding %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Island">
 		<h2>Custom Island</h2>
 		{% for display in island %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>		
 	<div class="Flooring">
 		<h2>Flooring</h2>
 		{% for display in flooring %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
 	<div class="Stairs">
 		<h2>Wood Stairs</h2>
 		{% for display in stairs %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>	
 	
 	<div class="Railing">
 		<h2>Railing</h2>
 		{% for display in railing %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>	
 	
 	<div class="Vanity">
 		<h2>Vanity</h2>
 		{% for display in vanity %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>	
 	
 	<div class="Fireplace">
 		<h2>Custom Fireplace</h2>
 		{% for display in fireplace %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>	
 	
 	<div class="Playhouse">
 		<h2>Kids Playhouse</h2>
 		{% for display in playhouse %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 
-	<div class="Fireplace">
+	<div class="Bunkbeds">
 		<h2>Kids Bunkbeds</h2>
 		{% for display in bunkbeds %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>	
 
 	<div class="Pantry">
 		<h2>Custom Kitchen Pantry</h2>
 		{% for display in pantry %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>	
 	
 	<div class="Stair">
 		<h2>Stair Railing</h2>
 		{% for display in stair %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 	
 	<div class="Egress">
 		<h2>Egress Window Well</h2>
 		{% for display in egress %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 	
 	<div class="Kitchen">
 		<h2>Custom Kitchen</h2>
 		{% for display in kitchen %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 	
 	<div class="Window">
 		<h2>Window</h2>
 		{% for display in window %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
 	</div>
 	
 	<div class="Roof">
 		<h2>New Siding and re-Roof</h2>
 		{% for display in roof %}
-			<img class="resize" src="{{ url_for('static', filename='images/projects/'+display.filename) }}">
+			<img class="resize" src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
 		{% endfor %}
-	</div>
+	</div>-->
 </div>
 {% endblock %}

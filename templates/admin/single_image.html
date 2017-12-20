@@ -4,7 +4,7 @@
 {% block content %}
 	<div class="single-image-edit">
 	  <h3>Are you sure you want to delete this photo?</h3>
-	  <a href="/dashboard/projects/{{ image.tag }}/{{ image.filename }}/delete" class="btn btn-md btn-danger">Delete Image</a>
-		<img src="{{ url_for('static', filename='images/projects/'+image.filename) }}">
+	  <a href="/dashboard/projects/{{ image.tag }}/{{ image.name }}/delete" class="btn btn-md btn-danger">Delete Image</a>
+		<img src="{{ s3projects +'/'+ image.project.name +'/'+  image.name}}">
 	</div>	
 {% endblock %}

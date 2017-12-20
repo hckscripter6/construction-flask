@@ -1,12 +1,13 @@
 from config import db
 
-class Projects(db.Model):
+class Project(db.Model):
 	id =  db.Column(db.Integer, primary_key=True)
-	filename = db.Column(db.String(300))
-	project = db.Column(db.String(300))
-	tag = db.Column(db.String(25))
+	name = db.Column(db.String(100))
+	tag = db.Column(db.String(100))
+	image = db.relationship('Image', backref='project', lazy='dynamic')
 	
-	def __init__(self, filename, project, tag):
-		self.filename = filename
-		self.project = project  
-		self.tag = tag
+class Image(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	name = db.Column(db.String(100))
+	project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
+	

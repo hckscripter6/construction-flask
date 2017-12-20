@@ -3,13 +3,12 @@
 
 {% block content %}
 	<div class="image-edit">
-	<h2>{{ project_title.project }}</h2>
+	<h2>{{ project_title.name }}</h2>
 	<h3>Click on an image to delete it</h3>
+					{% for display in project_title.image.all() %}
+						<a href="/dashboard/projects/{{ project_title.tag +'/'+ display.name }}/delete"><img class="resize" src="{{ s3projects +'/'+ project_title.name +'/'+ display.name }}"></a>
+						
+					{% endfor %}
 
-	{% for display in project %}
-		<a href="/dashboard/projects/{{ display.tag +'/'+ display.filename }}">
-			<img src="{{ s3projects +'/'+ display.tag +'/'+ display.filename }}">
-		</a>
-	{% endfor %}
 	</div>
 {% endblock %}

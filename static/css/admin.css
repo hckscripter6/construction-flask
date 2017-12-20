@@ -38,6 +38,10 @@ form {
 	margin-bottom: 2em;
 }
 
+select {
+	border-radius: .25em;
+}
+
 
 ul li a {
 	color: #222633;
