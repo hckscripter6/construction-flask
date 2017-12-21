@@ -9,9 +9,9 @@
 <div class="wrap projects">
 	<h1 id="projects">Projects</h1>
 	<div class="table">	  
-		<h3>With hundreds of projects completed in this area, we invite you to review our portfolio of some of our finished products.</h3>
+		<h4>With hundreds of projects completed in this area, we invite you to review our portfolio of some of our finished products.</h4>
 		
-		<h3>Navigate to the photos and slides of projects we've done!</h3>
+		<h5>Navigate to the photos and slides of projects we've done!</h5>
 		
 		<ul class="list-group">
 		 {% for display in projects %}
@@ -20,9 +20,9 @@
 		</ul>
 	</div>
 		
-	<div class="projects">
+	<div class="project-display">
 			{% for display in projects %}
-				<div class="display.tag">
+				<div class="display.tag marker">
 					<h2>{{ display.name }}</h2>
 					{% for display_images in display.images.all() %}
 						<img class="resize" id="{{ display.tag }}" src="{{ s3projects +'/'+ display.name +'/'+ display_images.name }}">

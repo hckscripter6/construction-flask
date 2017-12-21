@@ -42,15 +42,17 @@ def delete(tag, image_name):
 	db.session.commit()
 	return 'The image has been successfuly deleted'
 	
-@app.route('/dashboard/projects/<project>/delete', methods=['GET', 'POST'])
+@app.route('/dashboard/projects/<tag>/delete', methods=['GET', 'POST'])
 @login_required
-def delete_project(project):
-	single = Project.query.filter_by(name=project).first()
+def delete_project(tag):
+	single = Project.query.filter_by(tag=tag).first()
+	
 	for obj in bucket.objects.filter(Prefix=s3projects+'/'+single.name):
 		s3.Object(bucket.name, obj.key).delete()
+		
 	db.session.delete(single)
 	db.session.commit()
-	return 'the folder was deleted'
+	return redirect(url_for('admin_projects'))
 
 
 @app.route('/dashboard/projects', methods=['GET', 'POST'])
@@ -60,7 +62,7 @@ def admin_projects():
 	project_loop = Project.query.all()
 	if upload.validate_on_submit():
 		for loop in project_loop:
-			if request.form["project"] == loop.tag:
+			if request.form["select_project"] == loop.tag:
 				file = request.files['file']
 				bucket.put_object(Key='projects/'+ loop.name + '/'+ file.filename, Body=file)
 				newFile = Image(name=file.filename, project=loop)
@@ -68,7 +70,7 @@ def admin_projects():
 				db.session.commit()	
 				return redirect('/dashboard/projects/'+loop.tag)
 	
-	option_loop = Project.query.all()
+	option_loop = Project.query.order_by(Project.name).all()
 	
 	add_project = AddProject()		
 	if add_project.validate_on_submit():
@@ -76,6 +78,6 @@ def admin_projects():
 		p = Project(name=request.form["project"], tag=render_tag)
 		db.session.add(p)
 		db.session.commit()
-		return 'You have added the project'
+		return redirect(url_for('admin_projects'))
 	return render_template('admin/projects.html', option_loop=option_loop, project_loop = project_loop, s3projects=s3projects, upload=upload, add_project=add_project)
 	

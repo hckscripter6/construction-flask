@@ -15,6 +15,11 @@ body {
 	
 }
 
+div.container {
+	padding: 0;
+	
+}
+
 div.mission h2,
 div.services h2,
 div.third h2 {
@@ -32,12 +37,15 @@ nav {
 
 ul.list-group {
 	max-width: 22.5em !important;
-	margin: 0 auto;
-	text-align: center;	
+	border: 1px solid grey;
 }
 
 ul.list-group li.list-group-item {
-	padding: .2em;
+	padding: .2em .2em .2em .5em;
+}
+
+a > li.list-group-item {
+	color: black;
 }
 
 ul.list-group li.list-group-item:hover {
@@ -55,9 +63,6 @@ div.admin-panel {
 div.admin-panel a:hover {
 	color: blue;
 }
-
-
-
 
 ul.navbar-nav li a {
 	color: black !important;
@@ -81,18 +86,12 @@ div.jumbotron {
 	background: url('../images/jumbotron.jpg');
 }
 
-
-
-
 div.jumbotron h2 {
 	font-size: 1.9em;
 	font-weight: 600;
 	letter-spacing: .025em;
 	margin: .15em;
 }
-
-
-
 
 img.nav-img {
 	height: 2.8em;
@@ -160,12 +159,6 @@ div.services {
 }
 
 
-
-
-.container {
-	/*background-color: rgba(191, 191, 224, 0.6);*/
-	padding: 0 .5em;
-}
 
 div.contact-form {
 	margin: 1em -.6em 1em 1em;
@@ -257,21 +250,13 @@ div.resume ul {
 	border-radius: .35em;
 }
 
-div.wrap {
-	border: 1px solid #263049;
-	background-color: #afb9ce;
-	margin: .9em .55em;
-	border-radius: .25em;
-	padding: 0 .25em;
-}
-
 div.wrap h1 {
 	margin: .35em 0;
 }
 
 div.certificates img {
 	height: 200px;
-	width: 225px;
+	width: auto;
 }
 
 img.higher {
@@ -289,8 +274,9 @@ img.level {
 	width: 200px;
 }
 
-div.projects {
-	padding: .75em;	
+.projects {
+	margin: .5em 0 0 0;
+	
 }
 
 div.projects div.groupings {
@@ -316,9 +302,6 @@ div.projects div.carousel {
 	padding: .25em;
 }
 
-div.projects img:nth-of-type(2) {
-	margin: 0 .25em;
-}
 
 div.projects img {
 	margin-bottom: 1em !important;
@@ -326,13 +309,14 @@ div.projects img {
 
 div.projects h1 {
 	margin: 0;
-	text-align: center;
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
-div.projects h3 {
-	font-size: 1.25em;
-	text-align: center;
+
+
+div.marker:nth-child(odd) {
+	background-color: #b6b6b6;
+	padding: .05em .25em;
 }
 
 div.certificates img {
@@ -481,8 +465,9 @@ footer p {
 }
 
 img.resize {
-	height: 100px;
+	height: 125px;
 	width: auto;
+	margin-right: .2em;
 }
 
 @media screen and (max-width: 990px) {
@@ -569,6 +554,11 @@ img.resize {
 		height: 150px;
 	}
 	
+	img.resize {
+		height: 100px;
+		width: auto;
+	}
+	
 	div.contact p {
 		font-size: 1.35em;
 	}
@@ -593,9 +583,6 @@ img.resize {
 		display: block;
 	}
 	
-	div.wrap {
-		margin: .5em 0;
-	}
 
 	div.t-section p {
 		margin-top: .25em;
