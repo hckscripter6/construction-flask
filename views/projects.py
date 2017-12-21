@@ -6,7 +6,7 @@ from models.projects import Project, Image, db
 from forms.projects import FileForm, AddProject
 
 s3 = boto3.resource('s3')
-client = boto3.client('s3')
+bucket = s3.Bucket('brineyconstruction-app')
 s3projects = "https://brineyconstruction-app.s3.amazonaws.com/projects"
 
 def tag_generator(val):
@@ -41,6 +41,16 @@ def delete(tag, image_name):
 	db.session.delete(delete_data)
 	db.session.commit()
 	return 'The image has been successfuly deleted'
+	
+@app.route('/dashboard/projects/<project>/delete', methods=['GET', 'POST'])
+@login_required
+def delete_project(project):
+	single = Project.query.filter_by(name=project).first()
+	for obj in bucket.objects.filter(Prefix=s3projects+'/'+single.name):
+		s3.Object(bucket.name, obj.key).delete()
+	db.session.delete(single)
+	db.session.commit()
+	return 'the folder was deleted'
 
 
 @app.route('/dashboard/projects', methods=['GET', 'POST'])
@@ -52,7 +62,7 @@ def admin_projects():
 		for loop in project_loop:
 			if request.form["project"] == loop.tag:
 				file = request.files['file']
-				s3.Bucket('brineyconstruction-app').put_object(Key='projects/'+ loop.name + '/'+ file.filename, Body=file)
+				bucket.put_object(Key='projects/'+ loop.name + '/'+ file.filename, Body=file)
 				newFile = Image(name=file.filename, project=loop)
 				db.session.add(newFile)
 				db.session.commit()	
@@ -67,5 +77,5 @@ def admin_projects():
 		db.session.add(p)
 		db.session.commit()
 		return 'You have added the project'
-	return render_template('admin/projects.html', option_loop=option_loop, s3projects=s3projects, upload=upload, add_project=add_project)
+	return render_template('admin/projects.html', option_loop=option_loop, project_loop = project_loop, s3projects=s3projects, upload=upload, add_project=add_project)
 	

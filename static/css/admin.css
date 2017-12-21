@@ -6,10 +6,19 @@ div.upload-images {
 	margin-top: 0;
 }
 
-div.upload-images p,
-div.upload-images h1 {
-	text-align: center;
+div.grouping h5, a {
+	display: inline-block;
+	margin-bottom: .01em;
+	font-weight: bold;
 }
+
+
+div.grouping a {
+	position: relative;
+	left: .5em;
+}
+
+
 
 body, html  {
 	width: 100%;

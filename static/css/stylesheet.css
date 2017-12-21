@@ -30,6 +30,20 @@ nav {
 	
 }
 
+ul.list-group {
+	max-width: 22.5em !important;
+	margin: 0 auto;
+	text-align: center;	
+}
+
+ul.list-group li.list-group-item {
+	padding: .2em;
+}
+
+ul.list-group li.list-group-item:hover {
+	background-color: grey;
+}
+
 div.admin-panel {
 	background-color: black;
 	color: white;
