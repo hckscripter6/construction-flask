@@ -4,8 +4,6 @@
 {% block content %}
 <div class="upload-images">
 	<h1>Upload images to projects</h1>
-	<!-- Trigger the modal with a button -->
-	<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">add or remove project</button>
 
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
@@ -38,26 +36,52 @@
 		</div>
 
 	  </div>
-	</div>	
+	</div>
 
-
-	
-	<h2>Upload image</h2>
-	<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
-		{{ upload.csrf_token }}
-		{{ render_field(upload.file) }}
-		<div class="form-group">
-			<dt><label>project</label></dt>
-			<dd>
-				<select name="select_project">
-					{% for display in option_loop %}
-						<option value="{{ display.tag }}">{{ display.name }}</option>
-					{% endfor %}
-				</select>
-			</dd>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">Panel Heading</div>
+			  <div class="panel-body">
+					<!-- Trigger the modal with a button -->
+				<button type="button" style="margin-bottom: .5em;" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">add or remove project</button>
+				
+				<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}" class="project">
+					{{ upload.csrf_token }}
+					{{ render_field(upload.file) }}
+					<div class="form-group">
+						<dt><label>project</label></dt>
+						<dd>
+							<select name="select_project">
+								{% for display in project_loop %}
+									<option value="{{ display.tag }}">{{ display.name }}</option>
+								{% endfor %}
+							</select>
+						</dd>
+					</div>
+					{{ render_submit(upload.submit) }}
+				</form>	  
+			  </div>
+			</div>	
 		</div>
-		{{ render_submit(upload.submit) }}
-	</form>
+		<div class="col-md-8">
+			<ul class="list-group">
+			 {% for display in project_loop %}
+				<a href="{{ url_for('admin_projects') + '#' + display.tag }}"><li class="list-group-item">{{ display.name }}</li></a>
+			 {% endfor %}
+			</ul>
+		</div>
+	</div>
+	
+	<div class="display-images">
+		{% for display in project_loop %}
+			<h3 id="{{ display.tag }}">{{ display.name }}</h3>
+			{% for images in display.images.all() %}
+				<img src="{{ s3projects +'/'+ display.name +'/'+ images.name }}">
+			{% endfor %}
+		{% endfor %}
+	</div>
+
 </div>
 
 <script>

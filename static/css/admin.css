@@ -6,19 +6,42 @@ div.upload-images {
 	margin-top: 0;
 }
 
+div.panel, ul.list-group {
+	max-width: 25em;
+}
+
+div.search {
+	position: relative;
+	bottom: 7.2em;
+}
+
+div.panel-body {
+	padding-bottom: -1em !important;
+}
+
+form.project {
+	margin: 0;
+	padding: 0;
+}
+
 div.grouping h5, a {
-	display: inline-block;
 	margin-bottom: .01em;
 	font-weight: bold;
 }
 
+li.list-group-item {
+	padding: .25em .25em .25em .5em;
+}
 
 div.grouping a {
 	position: relative;
 	left: .5em;
 }
 
-
+img {
+	height: 100px;
+	width: auto;
+}
 
 body, html  {
 	width: 100%;

@@ -10,3 +10,6 @@ class FileForm(FlaskForm):
 class AddProject(FlaskForm):
 	project = StringField('project', validators=[InputRequired()])
 	submit = SubmitField()
+	
+class SearchImages(FlaskForm):
+	submit = SubmitField()

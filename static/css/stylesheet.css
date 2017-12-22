@@ -545,7 +545,18 @@ img.resize {
 	div.projects h2 {
 		font-size: 1.85em;
 	}
+	
+	div.projects h4 {
+		font-size: 1.1em;
+	}
+	
+	div.projects h1 {
+		margin-left: .25em;
+	}
 
+	div.projects div.table {
+		padding: 0 .5em;
+	}
 }
 
 @media screen and (max-width: 500px) {

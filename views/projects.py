@@ -3,7 +3,7 @@ from config import app
 import os, json, boto3
 from flask_login import login_required
 from models.projects import Project, Image, db
-from forms.projects import FileForm, AddProject
+from forms.projects import FileForm, AddProject, SearchImages
 
 s3 = boto3.resource('s3')
 bucket = s3.Bucket('brineyconstruction-app')
@@ -59,7 +59,7 @@ def delete_project(tag):
 @login_required
 def admin_projects():	
 	upload = FileForm()
-	project_loop = Project.query.all()
+	project_loop = Project.query.order_by(Project.name).all()
 	if upload.validate_on_submit():
 		for loop in project_loop:
 			if request.form["select_project"] == loop.tag:
@@ -70,8 +70,6 @@ def admin_projects():
 				db.session.commit()	
 				return redirect('/dashboard/projects/'+loop.tag)
 	
-	option_loop = Project.query.order_by(Project.name).all()
-	
 	add_project = AddProject()		
 	if add_project.validate_on_submit():
 		render_tag = tag_generator(request.form["project"])
@@ -79,5 +77,6 @@ def admin_projects():
 		db.session.add(p)
 		db.session.commit()
 		return redirect(url_for('admin_projects'))
-	return render_template('admin/projects.html', option_loop=option_loop, project_loop = project_loop, s3projects=s3projects, upload=upload, add_project=add_project)
+		
+	return render_template('admin/projects.html', project_loop=project_loop, s3projects=s3projects, upload=upload, add_project=add_project)
 	

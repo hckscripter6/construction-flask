@@ -21,14 +21,14 @@
 	</div>
 		
 	<div class="project-display">
-			{% for display in projects %}
-				<div class="display.tag marker">
-					<h2>{{ display.name }}</h2>
-					{% for display_images in display.images.all() %}
-						<img class="resize" id="{{ display.tag }}" src="{{ s3projects +'/'+ display.name +'/'+ display_images.name }}">
-					{% endfor %}
-				</div>
-			{% endfor %}
+		{% for display in projects %}
+			<div class="display.tag marker">
+				<h2 id="{{ display.tag }}">{{ display.name }}</h2>
+				{% for display_images in display.images.all() %}
+					<img class="resize" src="{{ s3projects +'/'+ display.name +'/'+ display_images.name }}">
+				{% endfor %}
+			</div>
+		{% endfor %}
 	</div>
 </div>
 {% endblock %}
