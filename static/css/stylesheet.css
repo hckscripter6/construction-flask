@@ -312,11 +312,16 @@ div.projects h1 {
 	font-size: 2.5em;
 }
 
+div.projects img {
+	border: 1px solid black;
+}
 
+div.marker {
+	padding: .05em .25em;
+}
 
 div.marker:nth-child(odd) {
 	background-color: #b6b6b6;
-	padding: .05em .25em;
 }
 
 div.certificates img {

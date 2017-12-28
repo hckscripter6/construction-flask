@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">Add or Remove Project</h4>
+	  </div>
+	  <div class="modal-body">
+		<h2>Add Project</h2>
+		<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin_projects') }}">
+			{{ add_project.csrf_token }}
+			{{ render_submit(add_project.project) }}
+			{{ render_submit(add_project.submit) }}
+		</form>
+		<div class="project-edit">
+			{% for display in project_loop %}
+				<div class="grouping">
+					<h5>{{ display.name }} - </h5><a onclick="check()" href="/dashboard/projects/{{ display.tag }}/delete" class="btn btn-xs btn-danger delete">delete</a>
+				</div>
+			{% endfor %}
+		</div>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  </div>
+	</div>
+  </div>
+</div>

@@ -38,9 +38,19 @@ div.grouping a {
 	left: .5em;
 }
 
-img {
+div.project-edit {
+	height: 200px;
+	overflow: scroll;
+	border: 1px solid grey;
+}
+
+div.display-images img {
 	height: 100px;
 	width: auto;
+}
+
+img.enlargeImageModalSource {
+	height: auto;
 }
 
 body, html  {

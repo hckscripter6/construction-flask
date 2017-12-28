@@ -35,7 +35,7 @@ def picture_edit(tag, name):
 @login_required
 def delete(tag, image_name):
 	project = Project.query.filter_by(tag=tag).first()
-	filename = project.image.name=image_name
+	filename = project.images.name=image_name
 	delete_data = Image.query.filter_by(name=image_name).first()
 	s3.Object('brineyconstruction-app', s3projects+"/"+ project.name +"/"+ filename).delete()
 	db.session.delete(delete_data)

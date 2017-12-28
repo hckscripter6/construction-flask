@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_formhelpers.html" import render_field, render_submit %}
 
 {% block title %}
 	Contact
@@ -12,26 +13,12 @@
 				<h2 style="text-align: center; margin: 0;">Send us a message </h2>
 				<p style="text-align: center">message will be sent to <em>joshuabriney@yahoo.com</em></p>
 				<div id="error"></div>
-				<form method="POST">
-				  <div class="form-group">
-					<label for="name">Name</label>
-					<input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter email" name="name">
-				  </div>
-				  <div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
-				  </div>
-				  <div class="form-group">
-					<label for="subject">Subject</label>
-					<input type="text" class="form-control" id="subject" placeholder="Password" name="subject">
-				  </div>
-				 
-				  <div class="form-group">
-					<label for="content">Message:</label>
-					<textarea class="form-control" id="content" rows="10" name="content"></textarea>
-				  </div>
-				  
-				  <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+				<form method="POST" action="{{ url_for('contact') }}">
+					{{ render_field(form.name, class="form-control") }}
+					{{ render_field(form.email, class="form-control") }}
+					{{ render_field(form.subject, class="form-control") }}
+					{{ render_field(form.message, class="form-control") }}
+					{{ render_submit(form.submit, class="btn btn-md btn-primary") }}
 				</form>
 			</div>
 		</div>
