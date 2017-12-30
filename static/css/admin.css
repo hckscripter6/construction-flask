@@ -24,13 +24,17 @@ form.project {
 	padding: 0;
 }
 
-div.grouping h5, a {
+div.grouping h5, 
+div.grouping a {
 	margin-bottom: .01em;
 	font-weight: bold;
+	display: inline;
+	text-align: justify;
 }
 
 li.list-group-item {
-	padding: .25em .25em .25em .5em;
+	padding: .15em .15em .15em .5em;
+	font-size: .9em;
 }
 
 div.grouping a {
@@ -49,8 +53,18 @@ div.display-images img {
 	width: auto;
 }
 
-img.enlargeImageModalSource {
+div.modal-image img {
 	height: auto;
+	margin-top: 1em;
+}
+
+div.modal-image h3,
+div.modal-image a {
+	margin: 0;
+}
+
+div.modal-image h3 {
+	margin-bottom: .25em;
 }
 
 body, html  {
@@ -105,17 +119,6 @@ div.admin-panel {
 	text-align: center;
 }
 
-div.single-image-edit {
-	text-align: center;
-}
-
-div.single-image-edit img {
-	height: 300px;
-	width: auto;
-	display: block;
-	margin: .75em auto 0 auto;
-	border: 1px solid black;
-}
 
 div.image-edit img {
 	height: 150px;

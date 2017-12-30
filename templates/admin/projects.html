@@ -7,6 +7,13 @@
 	{% include 'admin/includes/project_edit.html' %}
 	<div class="row">
 		<div class="col-md-4">
+			<ul class="list-group">
+			 {% for display in project_loop %}
+				<a href="{{ url_for('admin_projects') + '#' + display.tag }}"><li class="list-group-item">{{ display.name }}</li></a>
+			 {% endfor %}
+			</ul>
+		</div>
+		<div class="col-md-8">
 			<div class="panel panel-default">
 			  <div class="panel-heading">Panel Heading</div>
 			  <div class="panel-body">
@@ -31,14 +38,6 @@
 			  </div>
 			</div>	
 		</div>
-	
-		<div class="col-md-8">
-			<ul class="list-group">
-			 {% for display in project_loop %}
-				<a href="{{ url_for('admin_projects') + '#' + display.tag }}"><li class="list-group-item">{{ display.name }}</li></a>
-			 {% endfor %}
-			</ul>
-		</div>
 	</div>
 	
 	<div class="display-images">
@@ -48,8 +47,6 @@
 			{% for images in display.images.all() %}
 				<!--displayed image -->
 				<img src="{{ s3projects +'/'+ display.name +'/'+ images.name }}">
-				
-				{% include 'admin/includes/image_edit.html' %}
 			{% endfor %}
 		{% endfor %}
 	</div>
@@ -69,7 +66,11 @@ $(function() {
 });
 
 function check() {
-	confirm("Are you sure you want to delete this folder?  If you delete it, it will also delete the images inside of it.");
+	project = confirm("Are you sure you want to delete this folder?  If you delete it, it will also delete the images inside of it.");
+	
+	if (project == false) {
+		location.assign("http://salty-fjord-93546.herokuapp.com/dashboard/projects");
+	}
 } 
 
 function check_image() {

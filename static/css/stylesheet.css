@@ -35,12 +35,12 @@ nav {
 	
 }
 
-ul.list-group {
+div.projects ul.list-group {
 	max-width: 22.5em !important;
 	border: 1px solid grey;
 }
 
-ul.list-group li.list-group-item {
+div.projects ul.list-group li.list-group-item {
 	padding: .2em .2em .2em .5em;
 }
 
@@ -48,7 +48,7 @@ a > li.list-group-item {
 	color: black;
 }
 
-ul.list-group li.list-group-item:hover {
+div.projects ul.list-group li.list-group-item:hover {
 	background-color: grey;
 }
 
@@ -148,8 +148,8 @@ div.mission p {
 }
 
 div.current img {
-	height: 200px;
-	width: 200px;
+	height: 175px;
+	width: auto;
 	border: 1px solid black;
 	
 }
@@ -178,16 +178,6 @@ div.contact-form textarea {
 	border: 1px solid #9e9897 !important;
 }
 
-div.owner {
-	float: left;
-	width: 25%;
-	text-align: center;
-}
-
-div.resume-list {
-	float: left;
-	width: 75%;
-}
 
 div.contact-form h2,
 div.contact-info h2 {
@@ -228,26 +218,55 @@ div.testimonials h3 {
 }
 
 div.testimonials img {
-	margin-right: .5em;
+	margin-right: 1em;
 }
 
-div.testimonials {
-	border: .1px solid black;
-	background-color: #afb9ce;
-	margin: .9em .55em;
-	border-radius: .25em;
-	padding: 0 .25em;
-	background-color: #afb9ce !important;
-}
+
 
 div.testimonials h1 {
 	text-align: center;
 
 }
 
+div.resume h1 {
+	text-align: center;
+}
+
+div.resume {
+	margin: 0 auto;
+	width: 45em;
+}
+
+
+div.resume img {
+	height: 190px;
+	width: auto;
+	margin: 0 auto;
+	border: 1px solid black;;
+}
+
+div.resume div.owner {
+	position: relative;
+	top: 1.2em;
+}
+
+
 div.resume ul {
 	border: .25px solid black;
 	border-radius: .35em;
+}
+
+div.resume div.owner,
+div.resume div.resume-list {
+	display: inline-block;
+}
+
+div.resume div.resume-list {
+	margin-left: 1em;
+}
+
+div.resume div.resume-list ul li {
+	padding: .45em;
 }
 
 div.wrap h1 {
@@ -255,7 +274,7 @@ div.wrap h1 {
 }
 
 div.certificates img {
-	height: 200px;
+	height: 175px;
 	width: auto;
 }
 
@@ -420,30 +439,9 @@ div.current {
 	margin-left: -1em;
 }
 
-div.resume h1 {
-	text-align: center;
-}
-
-
-div.resume {
-	width: 50em;
-	height: auto;
-	margin: 0 auto;
-	overflow: hidden;
-	
-}
-
-div.resume img {
-	height: 200px;
-	width: 130px;
-	margin: 0 auto;
-	display: block;
-	border: 1px solid black;
-}
 
 
 div.certificates {
-	clear: both;
 	text-align: center;
 }
 
@@ -523,24 +521,37 @@ img.resize {
 }
 
 @media screen and (max-width: 767px) {
-	div.owner {
-		float: none;
-		text-align: center;
-		width: 100%;
-	}
 
-	
-	
-	div.resume-list {
-		width: 85%;
-		float: none;
+	div.resume div.resume-list ul li  {
+		padding: .45em;
 		font-size: .9em;
-		margin: 0 auto;
-		
 	}
-
+	
+	div.resume div.resume-list {
+		margin-left: 0;
+	}
+	
+	div.resume div.owner p {
+		font-size: .9em;
+	}
+	
+	div.resume img {
+		height: 175px;
+	}
+	
+	div.resume div.owner {
+		position: relative;
+		top: 1.25em;
+		margin-right: .5em;
+	}
+	
 	div.resume {
-		width: 100%;
+		width: 39em;
+	}
+	
+	div.certificates p {
+		font-size: .9em;
+		margin: .25em;
 	}
 
 	div.projects div.groupings {
@@ -564,6 +575,45 @@ img.resize {
 	}
 }
 
+@media screen and (max-width: 546px) {
+	div.resume div.owner,
+	div.resume div.resume-list {
+		display: block;
+	}	
+	
+	div.resume div.resume-list ul li	{
+		padding: .4em;
+		font-size: .85em;
+	}
+	
+	div.resume div.resume-list ul {
+		margin: 0 2em;
+	}
+	
+	div.resume img {
+		height: 150px;
+		margin: 0 auto;
+		display: block;
+	}
+	
+	div.resume div.owner p {
+		text-align: center;
+	}
+	
+	div.resume div.owner {
+		position: static;
+	}
+	
+	div.resume {
+		width: 100%;
+	}	
+	
+	div.certificates {
+		margin-top: .75em;
+	}
+
+}
+
 @media screen and (max-width: 500px) {
 	div.jumbotron img.logo {
 		width: 300px;
@@ -585,9 +635,11 @@ img.resize {
 		margin-bottom: .5em;
 	}
 	
-	div.resume-list {
-		width: 90%
+	div.resume div.resume-list ul li  {
+		padding: .25em;
+		font-size: .8em;
 	}
+	
 
 	div.jumbotron img.banner {
 		height: 75px;
