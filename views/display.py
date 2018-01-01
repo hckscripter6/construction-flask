@@ -30,4 +30,4 @@ def projects():
 	
 @app.route('/contact', methods=["POST", "GET"])
 def contact():
-	return render_template('contact.html', form=form)
+	return render_template('contact.html')

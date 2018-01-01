@@ -39,6 +39,10 @@ nav {
 	
 }
 
+div.projects div.project-display {
+	margin-bottom: 1em;
+}
+
 div.projects ul.list-group {
 	max-width: 20em !important;
 	border: 1px solid grey;
