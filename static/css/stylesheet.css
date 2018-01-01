@@ -207,7 +207,7 @@ div.contact tr:last-child td:last-child {
 
 div.contact img.twitter,
 div.contact img.facebook {
-		height: 47.5px;
+		height: 45px;
 		width: auto;
 		position: relative;
 		top: .2em;
@@ -216,7 +216,7 @@ div.contact img.facebook {
 
 div.contact img.twitter:hover,
 div.contact img.facebook:hover {
-		height: 48px;
+		height: 46px;
 
 }
 
@@ -237,18 +237,18 @@ div.contact tr td:first-child {
 	
 }
 
-div.contact div.info {
-	margin: 1.25em 0;
-}
-
 div.contact h2 {
 	margin-left: .5em;
+}
+
+div.contact {
+	padding: .5em;
 }
 
 div.directions {
 	border: 1px solid grey;
 	max-width: 60em;
-	margin: 0 auto;
+	margin: 0 auto .75em auto;
 	padding: 1em;
 	background-color: #c7d6dd;
 }
@@ -324,7 +324,7 @@ div.resume img {
 
 div.resume div.owner {
 	position: relative;
-	top: 1.2em;
+	top: .25em;
 }
 
 
@@ -336,6 +336,7 @@ div.resume ul {
 div.resume div.owner,
 div.resume div.resume-list {
 	display: inline-block;
+	vertical-align: top;
 }
 
 div.resume div.resume-list {
@@ -370,6 +371,10 @@ img.level {
 .projects {
 	margin: .5em 0 0 0;
 	
+}
+
+div.projects div.project-display {
+	margin-bottom: 1em;
 }
 
 div.projects div.groupings {
@@ -577,8 +582,6 @@ img.resize {
 	}
 	
 	div.resume div.owner {
-		position: relative;
-		top: 1.25em;
 		margin-right: .5em;
 	}
 	
@@ -652,6 +655,22 @@ img.resize {
 	div.contact tr td {
 		font-size: 1.15em;
 		padding: .55em;
+	}
+	
+	div.contact img.twitter,
+	div.contact img.facebook {
+			height: 35px;
+			
+	}
+	
+	div.info {
+		margin-top: .5em;
+	}
+
+	div.contact img.twitter:hover,
+	div.contact img.facebook:hover {
+			height: 36px;
+
 	}
 	
 	div.directions iframe {
@@ -742,5 +761,9 @@ img.resize {
 	div.contact tr td:first-child {
 		width: 2em;
 		
+	}
+	
+	div.contact {
+		padding: 0;
 	}
 }
