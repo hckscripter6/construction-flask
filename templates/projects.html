@@ -8,27 +8,32 @@
 {% include 'model-image.html' %}
 <div class="wrap projects">
 	<h1 id="projects">Projects</h1>
-	<div class="table">	  
 		<h4>With hundreds of projects completed in this area, we invite you to review our portfolio of some of our finished products.</h4>
-		
-		<h5>Navigate to the photos and slides of projects we've done!</h5>
-		
-		<ul class="list-group">
-		 {% for display in projects %}
-			<a href="{{ url_for('projects') + '#' + display.tag }}"><li class="list-group-item">{{ display.name }}</li></a>
-		 {% endfor %}
-		</ul>
-	</div>
-		
-	<div class="project-display">
-		{% for display in projects %}
-			<div class="marker">
-				<h2 id="{{ display.tag }}">{{ display.name }}</h2>
-				{% for display_images in display.images.all() %}
-					<img class="resize" src="{{ s3projects +'/'+ display.name +'/'+ display_images.name }}">
+	
+	<h5>Navigate to the photos and slides of projects we've done!</h5>
+	<div class="row">
+		<div class="col-md-3 col-sm-4">
+			<div class="table">	
+				<ul class="list-group">
+				 {% for display in projects %}
+					<a href="{{ url_for('projects') + '#' + display.tag }}"><li class="list-group-item">{{ display.name }}</li></a>
+				 {% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-9 col-sm-8">		
+			<div class="project-display">
+				{% for display in projects %}
+					<div class="marker">
+						<h2 id="{{ display.tag }}">{{ display.name }}</h2>
+						<a href="{{ url_for('projects') }}">back to the top</a>
+						{% for display_images in display.images.all() %}
+							<img class="resize" src="{{ s3projects +'/'+ display.name +'/'+ display_images.name }}">
+						{% endfor %}
+					</div>
 				{% endfor %}
 			</div>
-		{% endfor %}
+		</div>
 	</div>
 </div>
 {% endblock %}

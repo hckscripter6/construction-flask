@@ -16,31 +16,31 @@ def tag_generator(val):
 	d = c.strip()
 	e = d.replace(",", "")
 	f = e.replace(".", "")
-	return f
+	g = f.replace("!", "")
+	return g
 
 @app.route('/dashboard/projects/<tag>', methods=['GET', 'POST'])
 @login_required
 def project_edit(tag):
 	project_title = Project.query.filter_by(tag=tag).first()
-	#project = Project.query.filter_by(tag=tag).order_by(Project.id.desc()).all()
 	return render_template('admin/single_project.html', s3projects=s3projects, project_title=project_title)
+	
 	
 @app.route('/dashboard/projects/<tag>/<name>', methods=['GET', 'POST'])
 @login_required
 def picture_edit(tag, name):
-	image = Project.query.filter_by(name=name).order_by(Projects.id.desc()).first()
+	image = Image.query.filter_by(name=name).first()
 	return render_template('admin/single_image.html', image=image, s3projects=s3projects)
 	
 @app.route('/dashboard/projects/<tag>/<image_name>/delete', methods=['GET', 'POST'])
 @login_required
 def delete(tag, image_name):
 	project = Project.query.filter_by(tag=tag).first()
-	filename = project.images.name=image_name
-	delete_data = Image.query.filter_by(name=image_name).first()
-	s3.Object('brineyconstruction-app', s3projects+"/"+ project.name +"/"+ filename).delete()
-	db.session.delete(delete_data)
+	filename = Image.query.filter_by(name=image_name).first()
+	s3.Object('brineyconstruction-app', s3projects+"/"+ project.name +"/"+ str(filename)).delete()
+	db.session.delete(filename)
 	db.session.commit()
-	return 'The image has been successfuly deleted'
+	return render_template("admin/delete_warning/project_deleted.html")
 	
 @app.route('/dashboard/projects/<tag>/delete', methods=['GET', 'POST'])
 @login_required
@@ -52,7 +52,7 @@ def delete_project(tag):
 		
 	db.session.delete(single)
 	db.session.commit()
-	return redirect(url_for('admin_projects'))
+	return render_template('admin/delete_warning/project_deleted.html')
 
 
 @app.route('/dashboard/projects', methods=['GET', 'POST'])
@@ -68,7 +68,7 @@ def admin_projects():
 				newFile = Image(name=file.filename, project=loop)
 				db.session.add(newFile)
 				db.session.commit()	
-				return redirect('/dashboard/projects/'+loop.tag)
+				return redirect('/dashboard/projects#'+loop.tag)
 	
 	add_project = AddProject()		
 	if add_project.validate_on_submit():

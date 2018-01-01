@@ -1,15 +1,10 @@
 {% extends "admin/admin.html" %}
-{% from "_formhelpers.html" import render_field, render_submit %}
 
 {% block content %}
-	<div class="image-edit">
-	<h2>{{ project_title.name }}</h2>
-	<h3>Click on an image to delete it</h3>
-					{% for display in project_title.images.all() %}
-						<a href="/dashboard/projects/{{ project_title.tag +'/'+ display.name }}/delete">
-							<img class="resize" src="{{ s3projects +'/'+ project_title.name +'/'+ display.name }}">
-						</a>
-					{% endfor %}
-
-	</div>
+	<div style="margin-top: 1em; padding-top: 0; max-width: 40em;" class="alert alert-danger">
+	  <h2>Warning:</h2>
+	  <h3>If you delete this project you will delete all of it's images all well. Continue?</h3>
+		<a href="/dashboard/projects/{{ project_title.tag }}/delete" class="btn btn-sm btn-danger">Delete project</a>
+		<a class="btn btn-sm btn-primary" href="{{ url_for('admin_projects') }}">Go back</a>
+	</div>	
 {% endblock %}

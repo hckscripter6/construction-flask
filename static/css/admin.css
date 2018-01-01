@@ -1,3 +1,8 @@
+div.inline h3,
+div.inline h5 {
+	display: inline-block;
+}
+
 div.upload-images h2 {
 	font-size: 1.15em;
 }
@@ -6,8 +11,21 @@ div.upload-images {
 	margin-top: 0;
 }
 
+select {
+	max-width: 18em;
+}
+
 div.panel, ul.list-group {
 	max-width: 25em;
+	border: 1px solid grey;
+}
+
+ul.list-group li:hover {
+	background-color: grey;
+}
+
+ul.list-group {
+	border-radius: .25em;
 }
 
 div.search {
@@ -50,7 +68,9 @@ div.project-edit {
 
 div.display-images img {
 	height: 100px;
+	border: 1px solid black;
 	width: auto;
+	margin-bottom: .25em;
 }
 
 div.modal-image img {
@@ -69,7 +89,6 @@ div.modal-image h3 {
 
 body, html  {
 	width: 100%;
-	height: 100%;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
@@ -120,14 +139,12 @@ div.admin-panel {
 }
 
 
-div.image-edit img {
+div.single-image-edit img {
 	height: 150px;
 	width: auto;
-	float: left;
-	margin: .25em;
 	border: 1px solid black;
 }
 
-div.image-edit img:hover {
-	height: 147.5px;
+div.single-image-edit a {
+	display: inline-block;
 }

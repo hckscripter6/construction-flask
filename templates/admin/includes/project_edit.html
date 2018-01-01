@@ -18,7 +18,7 @@
 		<div class="project-edit">
 			{% for display in project_loop %}
 				<div class="grouping">
-					<h5>{{ display.name }}-</h5><a onclick="check()" href="/dashboard/projects/{{ display.tag }}/delete" class="btn btn-xs btn-danger delete">delete</a>
+					<h5>{{ display.name }}-</h5><a id="delete" onclick="check()" href="/dashboard/projects/{{ display.tag }}" class="btn btn-xs btn-danger delete">delete</a>
 				</div>
 			{% endfor %}
 		</div>

@@ -1,0 +1,9 @@
+{% extends "admin/admin.html" %}
+
+{% block content %}
+<div style="margin-top: 1em; max-width: 45em; border: 1px solid grey;" class="alert alert-danger">
+	<h2>The image has been successfully deleted</h2>
+	<a class="btn btn-sm btn-primary" href="{{ url_for('admin_projects') }}">Go back</a>
+</div>
+
+{% endblock %}

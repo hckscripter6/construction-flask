@@ -3,19 +3,12 @@
 
 {% block content %}
 <div class="upload-images">
-	<h1>Upload images to projects</h1>
+	<h1>Edit projects</h1>
 	{% include 'admin/includes/project_edit.html' %}
 	<div class="row">
 		<div class="col-md-4">
-			<ul class="list-group">
-			 {% for display in project_loop %}
-				<a href="{{ url_for('admin_projects') + '#' + display.tag }}"><li class="list-group-item">{{ display.name }}</li></a>
-			 {% endfor %}
-			</ul>
-		</div>
-		<div class="col-md-8">
 			<div class="panel panel-default">
-			  <div class="panel-heading">Panel Heading</div>
+			  <div class="panel-heading">Upload image</div>
 			  <div class="panel-body">
 					<!-- Trigger the modal with a button -->
 				<button type="button" style="margin-bottom: .5em;" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">add or remove project</button>
@@ -27,6 +20,7 @@
 						<dt><label>project</label></dt>
 						<dd>
 							<select name="select_project">
+									<option selected>--</option>
 								{% for display in project_loop %}
 									<option value="{{ display.tag }}">{{ display.name }}</option>
 								{% endfor %}
@@ -38,15 +32,25 @@
 			  </div>
 			</div>	
 		</div>
+		
+		<div class="col-md-8">
+			<ul class="list-group">
+			 {% for display in project_loop %}
+				<a href="{{ url_for('admin_projects') + '#' + display.tag }}"><li class="list-group-item">{{ display.name }}</li></a>
+			 {% endfor %}
+			</ul>
+		</div>
 	</div>
 	
 	<div class="display-images">
 		{% for display in project_loop %}
-			
-			<h3 id="{{ display.tag }}">{{ display.name }}</h3>
+			<div class="inline">
+				<h3 id="{{ display.tag }}">{{ display.name }}</h3> --
+				<a href="{{ url_for('admin_projects') }}"><h5>back to the top</h5></a>
+			</div>
 			{% for images in display.images.all() %}
 				<!--displayed image -->
-				<img src="{{ s3projects +'/'+ display.name +'/'+ images.name }}">
+				<a href="/dashboard/projects/{{ images.project.tag +'/'+ images.name }}"><img src="{{ s3projects +'/'+ display.name +'/'+ images.name }}"></a>
 			{% endfor %}
 		{% endfor %}
 	</div>
@@ -65,17 +69,7 @@ $(function() {
 	$('input[type="file"]').addClass("colorOver");
 });
 
-function check() {
-	project = confirm("Are you sure you want to delete this folder?  If you delete it, it will also delete the images inside of it.");
-	
-	if (project == false) {
-		location.assign("http://salty-fjord-93546.herokuapp.com/dashboard/projects");
-	}
-} 
 
-function check_image() {
-	confirm("Are you sure you want to delete this image?");
-}
 
 
 </script>

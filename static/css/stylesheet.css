@@ -20,6 +20,10 @@ div.container {
 	
 }
 
+h2 {
+	margin: 0;
+}
+
 div.mission h2,
 div.services h2,
 div.third h2 {
@@ -36,20 +40,31 @@ nav {
 }
 
 div.projects ul.list-group {
-	max-width: 22.5em !important;
+	max-width: 20em !important;
 	border: 1px solid grey;
 }
 
 div.projects ul.list-group li.list-group-item {
-	padding: .2em .2em .2em .5em;
+	padding: .1em .1em .1em .4em;
 }
 
-a > li.list-group-item {
+div.projects a > li.list-group-item {
 	color: black;
+	font-size: .9em;
 }
 
 div.projects ul.list-group li.list-group-item:hover {
 	background-color: grey;
+}
+
+.fixed {
+	position: fixed;
+	top: 1em;
+}
+
+.absolute {
+	position:;
+	top: 0;
 }
 
 div.admin-panel {
@@ -159,30 +174,88 @@ div.services {
 }
 
 
-
-div.contact-form {
-	margin: 1em -.6em 1em 1em;
-	padding: .5em;
-	border-radius: .5em;
-}
-
-div.contact-info {
-	margin: 1em 1em 1em -.6em;
-	padding: .5em;
-	border-radius: .5em;
-	text-align: center;
-}
-
-div.contact-form input, 
-div.contact-form textarea {
-	border: 1px solid #9e9897 !important;
+div.contact th,
+div.contact tr,
+div.contact td {
+	border: 1px solid grey !important;
 }
 
 
-div.contact-form h2,
-div.contact-info h2 {
+div.contact table {
+	max-width: 60em;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+div.contact table thead th {
+	padding: .25em;
+	
+}
+
+div.contact th,
+div.contact tr:nth-of-type(even){
+	background-color: #c7d6dd;
+}
+
+div.contact tr:last-child td:last-child {
+	padding: 0;
+}
+
+div.contact img.twitter,
+div.contact img.facebook {
+		height: 47.5px;
+		width: auto;
+		position: relative;
+		top: .2em;
+		left: .25em;
+}
+
+div.contact img.twitter:hover,
+div.contact img.facebook:hover {
+		height: 48px;
+
+}
+
+div.contact h2 {
 	margin: 0;
-	padding: .15em .15em .25em .15em;
+	font-size: 2.5em;
+}
+
+div.contact tr td {
+	font-size: 1.25em;
+	padding: .75em;
+}
+
+div.contact tr td:first-child {
+	width: 9em;
+	font-weight: bolder;
+	text-align: center;
+	
+}
+
+div.contact div.info {
+	margin: 1.25em 0;
+}
+
+div.contact h2 {
+	margin-left: .5em;
+}
+
+div.directions {
+	border: 1px solid grey;
+	max-width: 60em;
+	margin: 0 auto;
+	padding: 1em;
+	background-color: #c7d6dd;
+}
+
+div.directions iframe {
+	margin: 0 auto;
+	display: block;
+	height: 450px;
+	width: 100%;
+	border: 1px solid grey !important;
+	border-radius: .25em;
 }
 
 img.testimonials {
@@ -269,9 +342,6 @@ div.resume div.resume-list ul li {
 	padding: .45em;
 }
 
-div.wrap h1 {
-	margin: .35em 0;
-}
 
 div.certificates img {
 	height: 175px;
@@ -324,6 +394,7 @@ div.projects div.carousel {
 
 div.projects img {
 	margin-bottom: 1em !important;
+	border: 1px solid black;
 }
 
 div.projects h1 {
@@ -331,16 +402,23 @@ div.projects h1 {
 	font-size: 2.5em;
 }
 
-div.projects img {
-	border: 1px solid black;
-}
-
 div.marker {
 	padding: .05em .25em;
 }
 
+div.marker h2,
+div.marker a {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+div.marker a {
+	margin-bottom: .15em;
+}
+
 div.marker:nth-child(odd) {
-	background-color: #b6b6b6;
+	background-color: #4d75c9;
 }
 
 div.certificates img {
@@ -360,15 +438,6 @@ div.carousel {
 div.item img {
 	margin: 0 auto;
 	display: block;
-}
-
-
-
-
-img.facebook {
-	height: 3em;
-	width: 7em;
-	margin-bottom: .5em;
 }
 
 textarea {
@@ -400,24 +469,6 @@ a.email-button {
 	
 }
 
-div.contact {
-	padding: 1em;
-}
-
-div.contact h2 {
-	padding-bottom: .25em;
-	border-bottom: 2px solid black;
-	text-align: left;
-	margin-top: 0;
-	width: 90%;
-}
-
-div.contact p {
-	font-size: 1.5em;
-	
-	
-}
-
 div.certificates img {
 	border: .25px solid grey;
 }
@@ -443,14 +494,6 @@ div.current {
 
 div.certificates {
 	text-align: center;
-}
-
-div.wrap div.contact {
-	margin-top: .75em;
-}
-
-div.wrap div.contact p {
-	font-size: 1.25em;
 }
 
 footer {
@@ -488,16 +531,6 @@ img.resize {
 	
 	div.current {
 		margin-right: -1em;
-	}
-	
-
-	
-	div.contact-form {
-		margin: .5em 0 1em 0;
-	}
-
-	div.contact-info {
-		margin: 1em 0 1em 0;
 	}
 	
 	img.higher {
@@ -611,6 +644,15 @@ img.resize {
 	div.certificates {
 		margin-top: .75em;
 	}
+	
+	div.contact tr td {
+		font-size: 1.15em;
+		padding: .55em;
+	}
+	
+	div.directions iframe {
+		height: 325px;
+	}
 
 }
 
@@ -623,10 +665,6 @@ img.resize {
 	img.resize {
 		height: 100px;
 		width: auto;
-	}
-	
-	div.contact p {
-		font-size: 1.35em;
 	}
 	
 	div.testimonials img {
@@ -689,4 +727,16 @@ img.resize {
 		text-align: center;
 	}	
 
+}
+
+@media screen and (max-width: 386px) {
+	div.contact tr td {
+		font-size: .98em;
+		padding: .49em;
+	}
+	
+	div.contact tr td:first-child {
+		width: 2em;
+		
+	}
 }

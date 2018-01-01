@@ -6,34 +6,51 @@
 {% endblock %}
 
 {% block content %}
-<div class="wrap">
-	<div class="row">
-		<div class="col-md-8">
-			<div class="contact-form">
-				<h2 style="text-align: center; margin: 0;">Send us a message </h2>
-				<p style="text-align: center">message will be sent to <em>joshuabriney@yahoo.com</em></p>
-				<div id="error"></div>
-				<form method="POST" action="{{ url_for('contact') }}">
-					{{ render_field(form.name, class="form-control") }}
-					{{ render_field(form.email, class="form-control") }}
-					{{ render_field(form.subject, class="form-control") }}
-					{{ render_field(form.message, class="form-control", rows=12.5) }}
-					{{ render_submit(form.submit, class="btn btn-md btn-primary") }}
-				</form>
-			</div>
+<div class="contact">
+	<div class="info">
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th colspan=2><h2>Contact us!</h2></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Address</td>
+						<td>1324 Benton Harbor, MI 49022</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td><a href="mailto:josuabriney@yahoo.com">josuabriney@yahoo.com</a></td>
+					</tr>
+					<tr>
+						<td>Phone</td>
+						<td>269-369-2242</td>
+					</tr>
+					<tr>
+						<td>Fax</td>
+						<td>Fax: 269-588-4607</td>
+					</tr>
+					<tr>
+						<td>Office hours</td>
+						<td>Monday - Friday 8AM to 7PM</td>
+					</tr>
+					<tr>
+						<td>Social media</td>
+						<td>
+							<a target="_blank" href="https://www.facebook.com/Briney-Construction-Services-Inc-101990093213634/"><img alt="find us on facebook" class="facebook" src="{{ url_for('static', filename='images/facebook.png') }}" border=0></a>
+							
+							<img class="twitter" src="{{ url_for('static', filename='images/twitter1.png') }}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		
-		<div class="col-md-4">
-			<div class="contact">
-				<h2>Contact</h2>
-				<p>1324 Benton Harbor, MI 49022</p>
-				<p>Phone: 269-369-2242</p>
-				<p>Fax: 269-588-4607</p>
-				<p>Office Hours:</p>
-				<p>Monday - Friday 8AM to 7PM</p>
-				<a target="_blank" title="find us on Facebook" href="https://www.facebook.com/Briney-Construction-Services-Inc-101990093213634/"><img alt="find us on facebook" class="facebook" src="//login.create.net/images/icons/user/facebook-b_130x50.png" border=0></a>
-			</div>
-		</div>
+	</div>
+	<div class="directions">
+		<h2>Directions</h2>
+		<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJTbkBOuXFEIgRFmwp0HiP0jc&key=AIzaSyC1RAWGcXOm23etz9OxKIoixuEY0XNUMIU " allowfullscreen></iframe> 
 	</div>
 </div>
 {% endblock %}
