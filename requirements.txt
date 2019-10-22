@@ -42,7 +42,7 @@ olefile==0.44
 paramiko==2.4.0
 pathspec==0.5.0
 pbr==3.1.1
-Pillow==4.3.0
+Pillow==6.2.0
 pillowcase==2.0.0
 prettytable==0.7.2
 psycopg2==2.7.3
