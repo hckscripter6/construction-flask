@@ -15,7 +15,7 @@ click==6.7
 cloudinary==1.9.0
 colorama==0.3.7
 cryptography==2.1.4
-Django==1.11.4
+Django==1.11.29
 django-wysiwyg==0.8.0
 docker-py==1.7.2
 dockerpty==0.4.1
